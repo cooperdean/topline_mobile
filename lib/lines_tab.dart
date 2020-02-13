@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'team_roster.dart';
 
 class LinesTab extends StatefulWidget {
   LinesTab( {Key key} ) : super(key: key);
@@ -86,11 +87,16 @@ class _LinesState extends State<LinesTab> {
 
                     alignment: Alignment.center,
                     child: Card(child: ListTile(
-
                       title: Center(
                         child: Text( snapshot.data[index].team ),
-                      )
-                      ) 
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ),
+                      );
+                      },
+                     ) 
                     )
                   );
 
