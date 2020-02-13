@@ -12,75 +12,74 @@ class TeamRoster extends StatelessWidget {
       appBar: AppBar(
         title: Text( "${team.team}" )
       ),
-      body: Column(
+      body: GridView.count(
+        childAspectRatio: 2,
+        padding: const EdgeInsets.all(20),
+        crossAxisSpacing: 10,
+        crossAxisCount: 3,
         children: [
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l1lw}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l1c}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l1rw}" ),
-              ]
-              )
+
+          Center ( child: Container(
+              child: Text( "LW" )
             ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l2lw}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l2c}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l2rw}" ),
-              ]
-              )
+          ),
+          Center ( child: Container(
+              child: Text( "C" )
             ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l3lw}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l3c}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l3rw}" ),
-              ]
-              )
+          ),
+          Center ( child: Container(
+              child: Text( "RW" )
             ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l4lw}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l4c}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.l4rw}" ),
-              ]
-              )
+          ),
+
+          Center ( child: Container(
+              child: Text( "${team.l1lw}",textAlign: TextAlign.center )
             ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildButtonColumn(Colors.green, Icons.star, "${team.d1l}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.d1r}" ),
-              ]
-              )
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l1c}",textAlign: TextAlign.center )
             ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildButtonColumn(Colors.green, Icons.star, "${team.d2l}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.d2r}" ),
-              ]
-              )
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l1rw}",textAlign: TextAlign.center )
             ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildButtonColumn(Colors.green, Icons.star, "${team.d3l}" ),
-                _buildButtonColumn(Colors.green, Icons.star, "${team.d3r}" ),
-              ]
-              )
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l2lw}",textAlign: TextAlign.center )
             ),
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l2c}",textAlign: TextAlign.center )
+            ),
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l2rw}",textAlign: TextAlign.center )
+            ),
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l3lw}",textAlign: TextAlign.center )
+            ),
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l3c}",textAlign: TextAlign.center )
+            ),
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l3rw}",textAlign: TextAlign.center )
+            ),
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l4lw}",textAlign: TextAlign.center )
+            ),
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l4c}",textAlign: TextAlign.center )
+            ),
+          ),
+          Center ( child: Container(
+              child: Text( "${team.l4rw}",textAlign: TextAlign.center )
+            ),
+          ),
           
         ],
       )
