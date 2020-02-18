@@ -53,6 +53,7 @@ class _LinesState extends State<LinesTab> {
         l["pp2c"],
         l["pp2rw"],
         l["pp2ld"],
+        l["pp2rd"]
 
      );
     teamlines.add(teamline);
@@ -141,6 +142,7 @@ class TeamLine {
   final String pp2c;
   final String pp2rw;
   final String pp2ld;
+  final String pp2rd;
 
   TeamLine( 
 
@@ -173,6 +175,7 @@ class TeamLine {
     this.pp2c,
     this.pp2rw,
     this.pp2ld,
+    this.pp2rd
 
    );
 
