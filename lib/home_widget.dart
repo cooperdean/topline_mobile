@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( title: Center( child: Text( "Teams" ), ) ),
+      appBar: AppBar( title: Center( child: Text( "Team Lines" ), ) ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
@@ -34,10 +34,6 @@ class _HomeState extends State<Home> {
             icon: new Icon(Icons.update),
             title: new Text('Line Updates')
           ),          
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.whatshot),
-            title: new Text('Heaters')
-          )
         ],
       ),
     );

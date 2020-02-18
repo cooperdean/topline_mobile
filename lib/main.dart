@@ -8,8 +8,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData.dark().copyWith(
-        primaryColor: Colors.yellowAccent[700],
-        accentColor: Colors.lightBlue[600],
+        primaryColor: Colors.indigo[700],
+        accentColor: Colors.greenAccent[600],
       ),
       title: "Topline",
       home: Home(),

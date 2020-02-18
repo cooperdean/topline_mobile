@@ -85,21 +85,17 @@ class _LinesState extends State<LinesTab> {
                 itemCount : snapshot.data.length,
                 itemBuilder: (BuildContext context, int index){
                 return Container( 
-
-                    alignment: Alignment.center,
-                    child: Card(child: ListTile(
-                      title: Center(
-                        child: Text( snapshot.data[index].team ),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ),
-                      );
-                      },
-                     ) 
-                    )
-                  );
+                  
+                  decoration: BoxDecoration( border: Border(bottom: BorderSide(color: Colors.grey[800] ) ) ),
+                  child: ListTile(
+                      title: Center( child: Text( snapshot.data[index].team ) ),
+                      onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
+                          },
+                      ) 
+                    );
 
                 },
               );
