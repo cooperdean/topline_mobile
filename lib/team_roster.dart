@@ -8,12 +8,12 @@ class TeamRoster extends StatelessWidget {
 
   List getTeamColor(String event) {
 
-    if ( event == "Anaheim Ducks" ) return [ Color(0xFF00000), Color(0xFFF47A38) ];
+    if ( event == "Anaheim Ducks" ) return [ Color(0xFF000000), Color(0xFFF47A38) ];
     if ( event == "Arizona Coyotes" ) return [ Color(0xFFE2D6B5), Color(0xFF8C2633) ];
     if ( event == "Boston Bruins" ) return [ Color(0xFFFFB81C), Color(0xFF000000) ];
     if ( event == "Buffalo Sabres" ) return [ Color(0xFFFCB514), Color(0xFF002654) ];
     if ( event == "Calgary Flames" ) return [ Color(0xFFF1BE48), Color(0xFFC8102E) ];
-    if ( event == "Carolina Hurricanes" ) return [ Color(0xFFFFFFFF), Color(0xFFCC0000) ];
+    if ( event == "Carolina Hurricanes" ) return [ Color(0xFF000000), Color(0xFFCC0000) ];
     if ( event == "Chicago Blackhawks" ) return [ Color(0xFFD18A00), Color(0xFFCF0A2C) ];
     if ( event == "Colorado Avalanche" ) return [ Color(0xFF236192), Color(0xFF6F263D) ];
     if ( event == "Columbus Blue Jackets" ) return [ Color(0xFFCE1126), Color(0xFF002654) ];
@@ -40,9 +40,8 @@ class TeamRoster extends StatelessWidget {
     if ( event == "Washington Capitals" ) return [ Color(0xFF041E42), Color(0xFFC8102E) ];
     if ( event == "Winnipeg Jets" ) return [ Color(0xFF004C97), Color(0xFF041E42) ];
     return [ Colors.black, Colors.white];
-
   }
-  
+    
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,9 +63,9 @@ class TeamRoster extends StatelessWidget {
           crossAxisCount: 3,
           children: [
 
-          Center ( child: Container( child: Text( "LW",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "C",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "RW",textAlign: TextAlign.center ) ), ),
+          Center ( child: Container( child: Text( "LW",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+          Center ( child: Container( child: Text( "C",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 )  ) ), ),
+          Center ( child: Container( child: Text( "RW",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
           Center ( child: Container( child: Text( "${team.l1lw}",textAlign: TextAlign.center ) ), ),
           Center ( child: Container( child: Text( "${team.l1c}",textAlign: TextAlign.center ) ), ),
           Center ( child: Container( child: Text( "${team.l1rw}",textAlign: TextAlign.center ) ), ),
@@ -92,8 +91,8 @@ class TeamRoster extends StatelessWidget {
           crossAxisCount: 2,
           children: [
 
-          Center ( child: Container( child: Text( "LD" )),),
-          Center ( child: Container( child: Text( "RD" )),),
+          Center ( child: Container( child: Text( "LD", style: TextStyle( fontSize: 20 ) )),),
+          Center ( child: Container( child: Text( "RD", style: TextStyle( fontSize: 20 ) )),),
 
           Center ( child: Container( child: Text( "${team.d1l}",textAlign: TextAlign.center ) ), ),
           Center ( child: Container( child: Text( "${team.d1r}",textAlign: TextAlign.center ) ), ),
@@ -114,7 +113,7 @@ class TeamRoster extends StatelessWidget {
           crossAxisCount: 1,
           children: [
           
-          Center ( child: Container( child: Text( "PP 1" )),),
+          Center ( child: Container( child: Text( "PP 1", style: TextStyle( fontSize: 20 ) )),),
 
           Center ( child: Container( child: Text( "${team.pp1lw}   ${team.pp1c}   ${team.pp1rw}",textAlign: TextAlign.center ) ), ),
           Center ( child: Container( child: Text( "${team.pp1ld}   ${team.pp1rd}",textAlign: TextAlign.center ) ), ),
@@ -131,7 +130,7 @@ class TeamRoster extends StatelessWidget {
           crossAxisCount: 1,
           children: [
           
-          Center ( child: Container( child: Text( "PP 1" )),),
+          Center ( child: Container( child: Text( "PP 2", style: TextStyle( fontSize: 20 ) )),),
 
           Center ( child: Container( child: Text( "${team.pp2lw}   ${team.pp2c}   ${team.pp2rw}",textAlign: TextAlign.center ) ), ),
           Center ( child: Container( child: Text( "${team.pp2ld}   ${team.pp2rd}",textAlign: TextAlign.center ) ), ),

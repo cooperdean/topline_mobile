@@ -7,8 +7,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData.dark().copyWith(
-        primaryColor: Colors.indigo[700],
+        theme: ThemeData.light().copyWith(
+        primaryColor: Colors.indigo[800],
         accentColor: Colors.greenAccent[600],
       ),
       title: "Topline",

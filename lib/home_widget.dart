@@ -20,7 +20,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( title: Center( child: Text( "Team Lines" ), ) ),
+      appBar: AppBar( 
+        title: Image.asset( 'assets/topsix_logo.png', fit: BoxFit.cover, height: 30 ),
+        backgroundColor: Colors.white,
+        ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,

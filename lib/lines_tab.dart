@@ -86,7 +86,7 @@ class _LinesState extends State<LinesTab> {
                 itemBuilder: (BuildContext context, int index){
                 return Container( 
                   
-                  decoration: BoxDecoration( border: Border(bottom: BorderSide(color: Colors.grey[800] ) ) ),
+                  decoration: BoxDecoration( border: Border(bottom: BorderSide(color: Colors.grey[100] ) ) ),
                   child: ListTile(
                       title: Center( child: Text( snapshot.data[index].team ) ),
                       onTap: () {
