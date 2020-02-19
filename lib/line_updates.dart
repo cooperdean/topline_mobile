@@ -14,14 +14,14 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 
   Future<List<LineUpdate>> _getLineUpdates() async {
 
-  var data = await http.get("https://api.myjson.com/bins/t789g");
+  var data = await http.get("https://api.myjson.com/bins/axjso");
   var jsonData = json.decode(data.body);
 
   List<LineUpdate> lineupdates = [];
 
   for(var l in jsonData){
 
-    LineUpdate lineupdate = LineUpdate( l["team_name"], l["prom_line"], l["dem_line"], l["prom_player"], l["dem_player"], l["timestamp"] );
+    LineUpdate lineupdate = LineUpdate( l["team"], l["player"], l["moved_to"], l["timeStamp"] );
     lineupdates.add(lineupdate);
 
   }
@@ -52,28 +52,13 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                 itemCount : snapshot.data.length,
                 itemBuilder: (BuildContext context, int index){
                 
-                if( snapshot.data[index].demLine != 'N/A' && int.parse( snapshot.data[index].promLine.split(' ')[1] ) < 3 ){
-                  return Container( 
-
-                    alignment: Alignment.center,
-                    child: Card(child: ListTile(
-
-                      title: Text( snapshot.data[index].team+' promoted '+snapshot.data[index].promPlayer+' to '+snapshot.data[index].promLine ),
-                      subtitle: Text( 'demoted '+snapshot.data[index].demPlayer+' to '+snapshot.data[index].demLine ),
-
-                      ) 
-                    )
-                  );
-                } else if( snapshot.data[index].promLine == 'INJ' ){
-                  return Card( child: ListTile(
-
-                    title: Text( snapshot.data[index].team+' moved '+snapshot.data[index].promPlayer+' to '+snapshot.data[index].promLine ),
-
-                    )
-                  );
-                } else {
-                  return Container(width: 0,height: 0);
-                }
+                    return Container( 
+                      child: Card( child: ListTile( 
+                        title: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ),
+                        subtitle: Text( snapshot.data[index].timeStamp ),
+                        ) )
+                    );
+            
                 },
               );
             }
@@ -87,17 +72,13 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 class LineUpdate {
 
   final String team;
-  final String promLine;
-  final String demLine;
-  final String promPlayer;
-  final String demPlayer;
+  final String player;
+  final String moved_to;
   final String timeStamp;
 
   LineUpdate( this.team, 
-              this.promLine, 
-              this.demLine, 
-              this.promPlayer, 
-              this.demPlayer,
+              this.player, 
+              this.moved_to, 
               this.timeStamp );
 
 }

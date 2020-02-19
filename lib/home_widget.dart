@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
         title: Image.asset( 'assets/topsix_logo.png', fit: BoxFit.cover, height: 30 ),
         backgroundColor: Colors.white,
         ),
-      body: _children[_currentIndex],
+      body: _children[ _currentIndex ],
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentIndex,

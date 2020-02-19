@@ -15,7 +15,7 @@ class _LinesState extends State<LinesTab> {
 
   Future<List<TeamLine>> _getTeamLines() async {
 
-  var data = await http.get("https://api.myjson.com/bins/kgp1c");
+  var data = await http.get("https://api.myjson.com/bins/hpodk");
   var jsonData = json.decode(data.body);
 
   List<TeamLine> teamlines = [];
@@ -83,7 +83,7 @@ class _LinesState extends State<LinesTab> {
               return ListView.builder( 
 
                 itemCount : snapshot.data.length,
-                itemBuilder: (BuildContext context, int index){
+                itemBuilder: ( BuildContext context, int index){
                 return Container( 
                   
                   decoration: BoxDecoration( border: Border(bottom: BorderSide(color: Colors.grey[100] ) ) ),
