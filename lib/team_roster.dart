@@ -14,11 +14,11 @@ class TeamRoster extends StatelessWidget {
     if ( event == "Buffalo Sabres" ) return [ Color(0xFFFCB514), Color(0xFF002654) ];
     if ( event == "Calgary Flames" ) return [ Color(0xFFF1BE48), Color(0xFFC8102E) ];
     if ( event == "Carolina Hurricanes" ) return [ Color(0xFF000000), Color(0xFFCC0000) ];
-    if ( event == "Chicago Blackhawks" ) return [ Color(0xFFD18A00), Color(0xFFCF0A2C) ];
+    if ( event == "Chicago Blackhawks" ) return [ Color(0xFF000000), Color(0xFFCF0A2C) ];
     if ( event == "Colorado Avalanche" ) return [ Color(0xFF236192), Color(0xFF6F263D) ];
     if ( event == "Columbus Blue Jackets" ) return [ Color(0xFFCE1126), Color(0xFF002654) ];
     if ( event == "Dallas Stars" ) return [ Color(0xFFFFFFFF), Color(0xFF006847) ];
-    if ( event == "Detriot Red Wings" ) return [ Color(0xFFFFFFFF), Color(0xFFCE1126) ];
+    if ( event == "Detroit Red Wings" ) return [ Color(0xFFFFFFFF), Color(0xFFCE1126) ];
     if ( event == "Edmonton Oilers" ) return [ Color(0xFFFF4C00), Color(0xFF041E42) ];
     if ( event == "Florida Panthers" ) return [ Color(0xFFC8102E), Color(0xFF041E42) ];
     if ( event == "Los Angeles Kings" ) return [ Color(0xFFA2AAAD), Color(0xFF111111) ];
@@ -30,7 +30,7 @@ class TeamRoster extends StatelessWidget {
     if ( event == "New York Rangers" ) return [ Color(0xFFCE1126), Color(0xFF0038A8) ];
     if ( event == "Ottawa Senators" ) return [ Color(0xFFC2912C), Color(0xFFC52032) ];
     if ( event == "Philadelphia Flyers" ) return [ Color(0xFF000000) ,Color(0xFFF74902) ];
-    if ( event == "Pittsburgh Penguins" ) return [ Color(0xFF000000) ,Color(0xFFCFC493) ];
+    if ( event == "Pittsburgh Penguins" ) return [ Color(0xFFCFC493), Color(0xFF000000) ];
     if ( event == "San Jose Sharks" ) return [ Color(0xFF000000), Color(0xFF006D75) ];
     if ( event == "St Louis Blues" ) return [ Color(0xFFFCB514), Color(0xFF002F87) ];
     if ( event == "Tampa Bay Lightning" ) return [ Color(0xFFFFFFFF), Color(0xFF002868) ];
@@ -48,12 +48,12 @@ class TeamRoster extends StatelessWidget {
       appBar: AppBar(
         bottom: PreferredSize(child: Container(color: getTeamColor("${team.team}")[0], height: 4.0,), preferredSize: Size.fromHeight(4.0)),
         centerTitle: true,
-        title: Text( "${team.team}", style: TextStyle( color: Colors.white ) ),
+        title: Text( "${team.team}", style: TextStyle( color: Colors.white, fontFamily: "Chivo", fontStyle: FontStyle.italic ) ),
         backgroundColor: getTeamColor("${team.team}")[1],
       ),
       body: ListView( 
         children: [ 
-
+      
         GridView.count(
           physics: ScrollPhysics(),
           shrinkWrap: true,
@@ -93,7 +93,6 @@ class TeamRoster extends StatelessWidget {
 
           Center ( child: Container( child: Text( "LD", style: TextStyle( fontSize: 20 ) )),),
           Center ( child: Container( child: Text( "RD", style: TextStyle( fontSize: 20 ) )),),
-
           Center ( child: Container( child: Text( "${team.d1l}",textAlign: TextAlign.center ) ), ),
           Center ( child: Container( child: Text( "${team.d1r}",textAlign: TextAlign.center ) ), ),
           Center ( child: Container( child: Text( "${team.d2l}",textAlign: TextAlign.center ) ), ),
@@ -114,7 +113,6 @@ class TeamRoster extends StatelessWidget {
           children: [
           
           Center ( child: Container( child: Text( "PP 1", style: TextStyle( fontSize: 20 ) )),),
-
           Center ( child: Container( child: Text( "${team.pp1lw}   ${team.pp1c}   ${team.pp1rw}",textAlign: TextAlign.center ) ), ),
           Center ( child: Container( child: Text( "${team.pp1ld}   ${team.pp1rd}",textAlign: TextAlign.center ) ), ),
 
@@ -131,12 +129,12 @@ class TeamRoster extends StatelessWidget {
           children: [
           
           Center ( child: Container( child: Text( "PP 2", style: TextStyle( fontSize: 20 ) )),),
-
           Center ( child: Container( child: Text( "${team.pp2lw}   ${team.pp2c}   ${team.pp2rw}",textAlign: TextAlign.center ) ), ),
           Center ( child: Container( child: Text( "${team.pp2ld}   ${team.pp2rd}",textAlign: TextAlign.center ) ), ),
 
         ],
       ),
+      
       ]
       )
     );

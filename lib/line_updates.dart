@@ -14,7 +14,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 
   Future<List<LineUpdate>> _getLineUpdates() async {
 
-  var data = await http.get("https://api.myjson.com/bins/axjso");
+  var data = await http.get("https://api.myjson.com/bins/195mqg");
   var jsonData = json.decode(data.body);
 
   List<LineUpdate> lineupdates = [];
@@ -55,7 +55,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                     return Container( 
                       child: Card( child: ListTile( 
                         title: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ),
-                        subtitle: Text( snapshot.data[index].timeStamp ),
+                        trailing: Text( snapshot.data[index].timeStamp ),
                         ) )
                     );
             

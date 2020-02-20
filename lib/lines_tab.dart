@@ -15,7 +15,7 @@ class _LinesState extends State<LinesTab> {
 
   Future<List<TeamLine>> _getTeamLines() async {
 
-  var data = await http.get("https://api.myjson.com/bins/hpodk");
+  var data = await http.get("https://api.myjson.com/bins/1eij6g");
   var jsonData = json.decode(data.body);
 
   List<TeamLine> teamlines = [];
@@ -26,6 +26,7 @@ class _LinesState extends State<LinesTab> {
 
         l["team"],
         l["ir"],
+        l["timestamp"],
         l["l1lw"],
         l["l1c"],
         l["l1rw"],
@@ -111,6 +112,7 @@ class TeamLine {
 
   final String team;
   final List ir;
+  final String timestamp;
   final String l1lw;
   final String l1c;
   final String l1rw;
@@ -144,6 +146,7 @@ class TeamLine {
 
     this.team,
     this.ir,
+    this.timestamp,
     this.l1lw,
     this.l1c,
     this.l1rw,

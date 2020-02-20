@@ -7,10 +7,12 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData.light().copyWith(
-        primaryColor: Colors.indigo[800],
-        accentColor: Colors.greenAccent[600],
-      ),
+        theme: 
+          ThemeData(
+            brightness: Brightness.light,
+            primaryColor: Colors.greenAccent[700],
+            accentColor: Colors.greenAccent[600],
+          ),
       title: "Topline",
       home: Home(),
     );
