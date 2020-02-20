@@ -15,7 +15,7 @@ class _LinesState extends State<LinesTab> {
 
   Future<List<TeamLine>> _getTeamLines() async {
 
-  var data = await http.get("https://api.myjson.com/bins/1eij6g");
+  var data = await http.get("https://api.myjson.com/bins/12w2fw");
   var jsonData = json.decode(data.body);
 
   List<TeamLine> teamlines = [];
@@ -91,10 +91,8 @@ class _LinesState extends State<LinesTab> {
                   child: ListTile(
                       title: Center( child: Text( snapshot.data[index].team ) ),
                       onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
-                          },
+                          Navigator.push( context, MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
+                        },
                       ) 
                     );
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'functions.dart';
 
 class LineUpdatesTab extends StatefulWidget {
   LineUpdatesTab( {Key key} ) : super(key: key);
@@ -14,7 +15,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 
   Future<List<LineUpdate>> _getLineUpdates() async {
 
-  var data = await http.get("https://api.myjson.com/bins/195mqg");
+  var data = await http.get("https://api.myjson.com/bins/fo5uk");
   var jsonData = json.decode(data.body);
 
   List<LineUpdate> lineupdates = [];
@@ -55,7 +56,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                     return Container( 
                       child: Card( child: ListTile( 
                         title: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ),
-                        trailing: Text( snapshot.data[index].timeStamp ),
+                        subtitle: Text( formatDateOnlyTime(snapshot.data[index].timeStamp) ),
                         ) )
                     );
             

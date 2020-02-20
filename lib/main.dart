@@ -9,7 +9,6 @@ class App extends StatelessWidget {
     return MaterialApp(
         theme: 
           ThemeData(
-            brightness: Brightness.light,
             primaryColor: Colors.greenAccent[700],
             accentColor: Colors.greenAccent[600],
           ),

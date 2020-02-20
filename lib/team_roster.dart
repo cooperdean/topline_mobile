@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'lines_tab.dart';
+import 'functions.dart';
 
 class TeamRoster extends StatelessWidget {
 
@@ -8,8 +9,8 @@ class TeamRoster extends StatelessWidget {
 
   List getTeamColor(String event) {
 
-    if ( event == "Anaheim Ducks" ) return [ Color(0xFF000000), Color(0xFFF47A38) ];
-    if ( event == "Arizona Coyotes" ) return [ Color(0xFFE2D6B5), Color(0xFF8C2633) ];
+    if ( event == "Anaheim Ducks" ) return [ Color(0xFF00685E), Color(0xFF532A44) ];
+    if ( event == "Arizona Coyotes" ) return [ Color(0xFF154734), Color(0xFF8C2633) ];
     if ( event == "Boston Bruins" ) return [ Color(0xFFFFB81C), Color(0xFF000000) ];
     if ( event == "Buffalo Sabres" ) return [ Color(0xFFFCB514), Color(0xFF002654) ];
     if ( event == "Calgary Flames" ) return [ Color(0xFFF1BE48), Color(0xFFC8102E) ];
@@ -37,22 +38,34 @@ class TeamRoster extends StatelessWidget {
     if ( event == "Toronto Maple Leafs" ) return [ Color(0xFFFFFFFF), Color(0xFF00205B) ];
     if ( event == "Vancouver Canucks" ) return [ Color(0xFF00843D), Color(0xFF00205B) ];
     if ( event == "Vegas Golden Knights" ) return [ Color(0xFF333F42), Color(0xFFB4975A) ];
-    if ( event == "Washington Capitals" ) return [ Color(0xFF041E42), Color(0xFFC8102E) ];
+    if ( event == "Washington Capitals" ) return [ Color(0xFFC8102E), Color(0xFF041E42) ];
     if ( event == "Winnipeg Jets" ) return [ Color(0xFF004C97), Color(0xFF041E42) ];
     return [ Colors.black, Colors.white];
   }
-    
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        bottom: PreferredSize(child: Container(color: getTeamColor("${team.team}")[0], height: 4.0,), preferredSize: Size.fromHeight(4.0)),
+        iconTheme: IconThemeData( color: Colors.white ),
+        bottom: PreferredSize(child: Container(color: getTeamColor("${team.team}")[0], height: 8,), preferredSize: Size.fromHeight(4.0)),
         centerTitle: true,
         title: Text( "${team.team}", style: TextStyle( color: Colors.white, fontFamily: "Chivo", fontStyle: FontStyle.italic ) ),
         backgroundColor: getTeamColor("${team.team}")[1],
       ),
       body: ListView( 
-        children: [ 
+        children: [
+        Container( 
+          padding: EdgeInsets.only(top:20),
+          child: Column( 
+            
+            children: [
+              Icon( Icons.update ),
+              Center( child: Text( "${formatDate(team.timestamp)}" ) ) 
+            ]
+          
+          )
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -178,8 +191,34 @@ class TeamRoster extends StatelessWidget {
             Center ( child: Container( child: Text( "${team.pp2ld}   ${team.pp2rd}",textAlign: TextAlign.center ) ), ),
 
           ],
-      ),
-      
+        ),
+        
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Padding( padding: EdgeInsets.only( top: 100 ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+            Center ( child: Container( child: Text( "Out",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+
+          ],
+        ),
+
+        GridView.count(
+          physics: ScrollPhysics(),
+          shrinkWrap: true,
+          childAspectRatio: 3.5,
+          padding: const EdgeInsets.symmetric( horizontal: 20 ),
+          crossAxisSpacing: 5,
+          crossAxisCount: 2,
+          children: [
+
+            for (var ir in team.ir) Center( child: Text( "${ir}" ) )
+
+          ],
+        ),
+
       ]
       )
     );
