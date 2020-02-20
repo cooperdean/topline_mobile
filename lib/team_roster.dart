@@ -53,86 +53,131 @@ class TeamRoster extends StatelessWidget {
       ),
       body: ListView( 
         children: [ 
-      
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Padding( padding: EdgeInsets.only( top: 100 ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+            Center ( child: Container( child: Text( "LW",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+            Center ( child: Container( child: Text( "C",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 )  ) ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+            Center ( child: Container( child: Text( "RW",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+
+          ],
+        ),
         GridView.count(
           physics: ScrollPhysics(),
           shrinkWrap: true,
           childAspectRatio: 2,
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric( horizontal: 20 ),
           crossAxisSpacing: 10,
           crossAxisCount: 3,
           children: [
 
-          Center ( child: Container( child: Text( "LW",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
-          Center ( child: Container( child: Text( "C",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 )  ) ), ),
-          Center ( child: Container( child: Text( "RW",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
-          Center ( child: Container( child: Text( "${team.l1lw}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l1c}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l1rw}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l2lw}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l2c}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l2rw}",textAlign: TextAlign.center ) ), ),          
-          Center ( child: Container( child: Text( "${team.l3lw}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l3c}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l3rw}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l4lw}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l4c}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.l4rw}",textAlign: TextAlign.center ) ), ),        
+            Center ( child: Container( child: Text( "${team.l1lw}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l1c}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l1rw}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l2lw}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l2c}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l2rw}",textAlign: TextAlign.center ) ), ),          
+            Center ( child: Container( child: Text( "${team.l3lw}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l3c}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l3rw}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l4lw}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l4c}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.l4rw}",textAlign: TextAlign.center ) ), ),        
           
           ],
-      )
+        ),
 
-        ,GridView.count(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Padding( padding: EdgeInsets.only( top: 100 ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+            Center ( child: Container( child: Text( "LD",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+            Center ( child: Container( child: Text( "RD",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 )  ) ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+
+          ],
+        ),
+
+        GridView.count(
           physics: ScrollPhysics(),
           shrinkWrap: true,
           childAspectRatio: 3.5,
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric( horizontal: 20 ),
           crossAxisSpacing: 5,
           crossAxisCount: 2,
           children: [
 
-          Center ( child: Container( child: Text( "LD", style: TextStyle( fontSize: 20 ) )),),
-          Center ( child: Container( child: Text( "RD", style: TextStyle( fontSize: 20 ) )),),
-          Center ( child: Container( child: Text( "${team.d1l}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.d1r}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.d2l}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.d2r}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.d3l}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.d3r}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.d1l}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.d1r}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.d2l}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.d2r}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.d3l}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.d3r}",textAlign: TextAlign.center ) ), ),
 
-        ],
-      ),
-    
+          ],
+        ),
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Padding( padding: EdgeInsets.only( top: 100 ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+            Center ( child: Container( child: Text( "PP 1",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+
+          ],
+        ),
+        
         GridView.count(
           physics: ScrollPhysics(),
           shrinkWrap: true,
           childAspectRatio: 6,
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric( horizontal: 20 ),
           crossAxisSpacing: 5,
           crossAxisCount: 1,
           children: [
           
-          Center ( child: Container( child: Text( "PP 1", style: TextStyle( fontSize: 20 ) )),),
-          Center ( child: Container( child: Text( "${team.pp1lw}   ${team.pp1c}   ${team.pp1rw}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.pp1ld}   ${team.pp1rd}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.pp1lw}   ${team.pp1c}   ${team.pp1rw}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.pp1ld}   ${team.pp1rd}",textAlign: TextAlign.center ) ), ),
 
-        ],
-      ),
+          ],
+        ),
       
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Padding( padding: EdgeInsets.only( top: 100 ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+            Center ( child: Container( child: Text( "PP 2",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+            Expanded( child: Divider( color: Colors.grey ) ),
+
+          ],
+        ),
+
         GridView.count(
           physics: ScrollPhysics(),
           shrinkWrap: true,
           childAspectRatio: 6,
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric( horizontal: 20 ),
           crossAxisSpacing: 5,
           crossAxisCount: 1,
           children: [
-          
-          Center ( child: Container( child: Text( "PP 2", style: TextStyle( fontSize: 20 ) )),),
-          Center ( child: Container( child: Text( "${team.pp2lw}   ${team.pp2c}   ${team.pp2rw}",textAlign: TextAlign.center ) ), ),
-          Center ( child: Container( child: Text( "${team.pp2ld}   ${team.pp2rd}",textAlign: TextAlign.center ) ), ),
 
-        ],
+            Center ( child: Container( child: Text( "${team.pp2lw}   ${team.pp2c}   ${team.pp2rw}",textAlign: TextAlign.center ) ), ),
+            Center ( child: Container( child: Text( "${team.pp2ld}   ${team.pp2rd}",textAlign: TextAlign.center ) ), ),
+
+          ],
       ),
       
       ]
