@@ -16,7 +16,7 @@ class _LinesState extends State<LinesTab> {
   Future<List<TeamLine>> _getTeamLines() async {
 
   var data = await http.get("https://api.myjson.com/bins/12w2fw");
-  var jsonData = json.decode(data.body);
+  var jsonData = json.decode( data.body );
 
   List<TeamLine> teamlines = [];
 

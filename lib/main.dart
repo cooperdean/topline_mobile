@@ -9,7 +9,7 @@ class App extends StatelessWidget {
     return MaterialApp(
         theme: 
           ThemeData(
-            primaryColor: Colors.greenAccent[700],
+            primaryColor: Colors.indigo[800],
             accentColor: Colors.greenAccent[600],
           ),
       title: "Topline",

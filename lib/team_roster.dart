@@ -56,7 +56,7 @@ class TeamRoster extends StatelessWidget {
       body: ListView( 
         children: [
         Container( 
-          padding: EdgeInsets.only(top:20),
+          padding: EdgeInsets.only( top:30 ),
           child: Column( 
             
             children: [
@@ -218,6 +218,8 @@ class TeamRoster extends StatelessWidget {
 
           ],
         ),
+
+        Container( height: 100 )
 
       ]
       )

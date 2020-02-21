@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'functions.dart';
+import 'package:intl/intl.dart';
 
 class LineUpdatesTab extends StatefulWidget {
   LineUpdatesTab( {Key key} ) : super(key: key);
@@ -15,7 +16,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 
   Future<List<LineUpdate>> _getLineUpdates() async {
 
-  var data = await http.get("https://api.myjson.com/bins/fo5uk");
+  var data = await http.get("https://api.myjson.com/bins/xwge4");
   var jsonData = json.decode(data.body);
 
   List<LineUpdate> lineupdates = [];
@@ -52,15 +53,20 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 
                 itemCount : snapshot.data.length,
                 itemBuilder: (BuildContext context, int index){
-                
+
+                if( int.tryParse( snapshot.data[index].moved_to.split(" ")[1] ) < 3 ){  
                     return Container( 
                       child: Card( child: ListTile( 
-                        title: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ),
-                        subtitle: Text( formatDateOnlyTime(snapshot.data[index].timeStamp) ),
-                        ) )
+                          title: Center( child: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ) ),
+                          subtitle: Center( child: Text( formatDate( snapshot.data[index].timeStamp ) ) ),
+                        ) 
+                      )
                     );
-            
-                },
+                } else {
+                    return Container( height: 0, width: 0 );
+                }
+
+                }
               );
             }
           },
