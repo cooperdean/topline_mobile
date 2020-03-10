@@ -35,42 +35,77 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: Container(
-        child: FutureBuilder(
-          future: _getLineUpdates(),
-          builder: (BuildContext context, AsyncSnapshot snapshot){
+      backgroundColor: Colors.grey[900],
+      body: Column(
+          children: [ 
+            Container(
+              height: 25,
+              color: Colors.grey[900]
+            ),
+            Container(
+              child: FutureBuilder(
+                future: _getLineUpdates(),
+                builder: (BuildContext context, AsyncSnapshot snapshot){
 
-            if(snapshot.data == null){
+                  if(snapshot.data == null){
 
-              return Container( 
-                child: Center( 
-                  child: Text("Loading...")
-                 )
-               );
-
-            } else {
-              return ListView.builder( 
-
-                itemCount : snapshot.data.length,
-                itemBuilder: (BuildContext context, int index){
-
-                if( int.tryParse( snapshot.data[index].moved_to.split(" ")[1] ) < 3 ){  
                     return Container( 
-                      child: Card( child: ListTile( 
-                          title: Center( child: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ) ),
-                          subtitle: Center( child: Text( formatDate( snapshot.data[index].timeStamp ) ) ),
-                        ) 
+                      child: Center( 
+                        child: Text("Loading...", style: TextStyle( color: Colors.white ) )
                       )
                     );
-                } else {
-                    return Container( height: 0, width: 0 );
-                }
 
-                }
-              );
-            }
-          },
-        ),
+                  } else {
+                    return Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40)
+                        ),
+                        child: Container(
+
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(40),
+                                topRight: Radius.circular(40),
+                              )
+
+                            ),
+
+
+                            child: ListView.builder( 
+
+                            itemCount : snapshot.data.length,
+                            itemBuilder: (BuildContext context, int index){
+
+                            if( int.tryParse( snapshot.data[index].moved_to.split(" ")[1] ) < 3 ){  
+                                return Container( 
+                                  child: Card( 
+                                      child: Container(
+                                        color: Colors.white,
+                                        child: ListTile( 
+                                          title: Center( child: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ) ),
+                                          subtitle: Center( child: Text( formatDate( snapshot.data[index].timeStamp ) ) ),
+                                        ),
+                                      ) 
+                                  )
+                                );
+                            } else {
+                                return Container( height: 0, width: 0 );
+                            }
+
+                            }
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                },
+              ),
+            ),
+        ]
       ), 
     );
   }

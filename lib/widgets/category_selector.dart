@@ -10,7 +10,7 @@ class CategorySelector extends StatefulWidget {
 }
 class _CategorySelectorState extends State<CategorySelector>{
 
-  final List<String> lineCats = ['Forwards', 'Defense', 'Powerplay 1', 'Powerplay 2', 'Injured'];
+  final List<String> lineCats = ['Forwards', 'Defense', 'Powerplay', 'Injured'];
   int selectedIndex = 0;
 
   @override
@@ -43,7 +43,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                             color: index == selectedIndex ? getTeamColor("${widget.team.team}")[0] : Colors.white60,
                             fontSize: 15.0,
                             fontWeight: FontWeight.bold,
-                            letterSpacing: 1.4
+                            letterSpacing: 2
                           )
                         )
                       ),
@@ -68,7 +68,11 @@ class _CategorySelectorState extends State<CategorySelector>{
                         child: Column( 
                           children: [
                             Icon( Icons.update ),
-                            Center( child: Text( "${formatDate(widget.team.timestamp)}" ) ) 
+                            Center( child: Text( 
+                                "${formatDate(widget.team.timestamp)}",
+                                style: TextStyle( fontSize: 16, letterSpacing: 1.4 )
+                              ) 
+                            ) 
                           ]
                         )
                       ),
@@ -88,7 +92,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                       if( selectedIndex==0 ) GridView.count(
                         physics: ScrollPhysics(),
                         shrinkWrap: true,
-                        childAspectRatio: 2,
+                        childAspectRatio: 1.3,
                         padding: const EdgeInsets.symmetric( horizontal: 20 ),
                         crossAxisSpacing: 10,
                         crossAxisCount: 3,
@@ -121,7 +125,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                       if( selectedIndex==1 ) GridView.count(
                         physics: ScrollPhysics(),
                         shrinkWrap: true,
-                        childAspectRatio: 3.5,
+                        childAspectRatio: 2,
                         padding: const EdgeInsets.symmetric( horizontal: 20 ),
                         crossAxisSpacing: 5,
                         crossAxisCount: 2,
@@ -155,7 +159,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                           Center ( child: Container( child: Text( "${widget.team.pp1ld}   ${widget.team.pp1rd}",textAlign: TextAlign.center ) ), ),
                         ],
                       ),
-                      if( selectedIndex==3 ) Row(
+                      if( selectedIndex==2 ) Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding( padding: EdgeInsets.only( top: 100 ), ),
@@ -164,7 +168,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                           Expanded( child: Divider( color: Colors.grey ) ),
                         ],
                       ),
-                      if( selectedIndex==3 ) GridView.count(
+                      if( selectedIndex==2 ) GridView.count(
                         physics: ScrollPhysics(),
                         shrinkWrap: true,
                         childAspectRatio: 6,
@@ -176,7 +180,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                           Center ( child: Container( child: Text( "${widget.team.pp2ld}   ${widget.team.pp2rd}",textAlign: TextAlign.center ) ), ),
                         ],
                       ),
-                      if( selectedIndex==4 ) Row(
+                      if( selectedIndex==3 ) Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding( padding: EdgeInsets.only( top: 100 ), ),
@@ -185,7 +189,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                           Expanded( child: Divider( color: Colors.grey ) ),
                         ],
                       ),
-                      if( selectedIndex==4 ) GridView.count(
+                      if( selectedIndex==3 ) GridView.count(
                         physics: ScrollPhysics(),
                         shrinkWrap: true,
                         childAspectRatio: 3.5,

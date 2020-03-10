@@ -85,44 +85,44 @@ class _LinesState extends State<LinesTab> {
 
             } else {
               return Expanded(
-                  child: ClipRRect(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(50),
-                          topRight: Radius.circular(50)
-                        ),
-                        child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30)
-                        ),
-                        child: ListView.builder( 
-                          itemCount : snapshot.data.length,
-                          itemBuilder: ( BuildContext context, int index){
-                          return Container( 
-                            decoration: BoxDecoration( 
-                              color: Colors.white,
-                              border: Border(bottom: BorderSide(color: Colors.grey[100] ) )
-                              ),
-                            child: ListTile(
-                                title: Center( 
-                                  child: Text( 
-                                    snapshot.data[index].team,
-                                    style: TextStyle( letterSpacing: .4 ),
-                                  ) 
-                                ),
-                                onTap: () {
-                                    Navigator.push( context, MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
-                                  },
-                                ) 
-                              );
-                      },
+                child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50),
+                        topRight: Radius.circular(50)
+                      ),
+                      child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30)
+                      ),
+                      child: ListView.builder( 
+                        itemCount : snapshot.data.length,
+                        itemBuilder: ( BuildContext context, int index){
+                        return Container( 
+                          decoration: BoxDecoration( 
+                            color: Colors.white,
+                            border: Border(bottom: BorderSide(color: Colors.grey[100] ) )
+                            ),
+                          child: ListTile(
+                            title: Center( 
+                              child: Text( 
+                                snapshot.data[index].team,
+                                style: TextStyle( letterSpacing: .4 ),
+                              ) 
+                            ),
+                            onTap: () {
+                                Navigator.push( context, MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
+                              },
+                            ) 
+                          );
+                        },
+                      ),
                     ),
                   ),
-                ),
-              );
-            }
-          },
-        ),
+                );
+              }
+            },
+          ),
         ]
       ), 
     );

@@ -7,11 +7,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: 
-          ThemeData(
-            primaryColor: Colors.indigo[800],
-            accentColor: Colors.greenAccent[600],
-          ),
+      themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        primaryColor: Colors.grey[900],
+        accentColor: Colors.yellow 
+      ),
       title: "Topline",
       home: Home(),
     );
