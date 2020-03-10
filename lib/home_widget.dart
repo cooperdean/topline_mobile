@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'placeholder_widget.dart';
 import 'line_updates.dart';
 import 'lines_tab.dart';
 
@@ -15,14 +14,22 @@ class _HomeState extends State<Home> {
   final List<Widget> _children = [
     LinesTab(),
     LineUpdatesTab(),
-    PlaceholderWidget(Colors.green)
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset( 'assets/topsix_logo.png', fit: BoxFit.cover, height: 30 ),
-        backgroundColor: Colors.white,
+        leading: Icon( Icons.menu, color: Colors.yellow ),
+        title: Text( "Topsix", 
+          style: TextStyle( 
+            color: Colors.white, 
+            fontFamily: "Chivo", 
+            fontStyle: FontStyle.italic,
+            fontSize: 26
+          ) 
+        ),
+        backgroundColor: Colors.grey[900],
+        elevation: 0,
       ),
       body: _children[ _currentIndex ],
       bottomNavigationBar: BottomNavigationBar(

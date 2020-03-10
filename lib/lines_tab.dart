@@ -14,61 +14,64 @@ class LinesTab extends StatefulWidget {
 class _LinesState extends State<LinesTab> {
 
   Future<List<TeamLine>> _getTeamLines() async {
+    var data = await http.get("https://api.myjson.com/bins/12w2fw");
+    var jsonData = json.decode( data.body );
+    List<TeamLine> teamlines = [];
+    for(var l in jsonData){
+      TeamLine teamline = TeamLine( 
 
-  var data = await http.get("https://api.myjson.com/bins/12w2fw");
-  var jsonData = json.decode( data.body );
+          l["team"],
+          l["ir"],
+          l["timestamp"],
+          l["l1lw"],
+          l["l1c"],
+          l["l1rw"],
+          l["l2lw"],
+          l["l2c"],
+          l["l2rw"],
+          l["l3lw"],
+          l["l3c"],
+          l["l3rw"],
+          l["l4lw"],
+          l["l4c"],
+          l["l4rw"],
+          l["d1r"],
+          l["d1l"],
+          l["d2r"],
+          l["d2l"],
+          l["d3r"],
+          l["d3l"],
+          l["pp1lw"],
+          l["pp1c"],
+          l["pp1rw"],
+          l["pp1ld"],
+          l["pp1rd"],
+          l["pp2lw"],
+          l["pp2c"],
+          l["pp2rw"],
+          l["pp2ld"],
+          l["pp2rd"]
 
-  List<TeamLine> teamlines = [];
-
-  for(var l in jsonData){
-
-    TeamLine teamline = TeamLine( 
-
-        l["team"],
-        l["ir"],
-        l["timestamp"],
-        l["l1lw"],
-        l["l1c"],
-        l["l1rw"],
-        l["l2lw"],
-        l["l2c"],
-        l["l2rw"],
-        l["l3lw"],
-        l["l3c"],
-        l["l3rw"],
-        l["l4lw"],
-        l["l4c"],
-        l["l4rw"],
-        l["d1r"],
-        l["d1l"],
-        l["d2r"],
-        l["d2l"],
-        l["d3r"],
-        l["d3l"],
-        l["pp1lw"],
-        l["pp1c"],
-        l["pp1rw"],
-        l["pp1ld"],
-        l["pp1rd"],
-        l["pp2lw"],
-        l["pp2c"],
-        l["pp2rw"],
-        l["pp2ld"],
-        l["pp2rd"]
-
-     );
-    teamlines.add(teamline);
-  }
-
-  return teamlines;
+      );
+      teamlines.add(teamline);
+    }
+    return teamlines;
 
 }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: Container(
-        child: FutureBuilder(
+      backgroundColor: Colors.grey[900],
+      body: Column(
+        children: [ 
+          
+          Container(
+            height: 25,
+            color: Colors.grey[900]
+          ),
+
+          FutureBuilder(
           future: _getTeamLines(),
           builder: (BuildContext context, AsyncSnapshot snapshot){
 
@@ -81,26 +84,46 @@ class _LinesState extends State<LinesTab> {
                );
 
             } else {
-              return ListView.builder( 
-
-                itemCount : snapshot.data.length,
-                itemBuilder: ( BuildContext context, int index){
-                return Container( 
-                  
-                  decoration: BoxDecoration( border: Border(bottom: BorderSide(color: Colors.grey[100] ) ) ),
-                  child: ListTile(
-                      title: Center( child: Text( snapshot.data[index].team ) ),
-                      onTap: () {
-                          Navigator.push( context, MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
-                        },
-                      ) 
-                    );
-
-                },
+              return Expanded(
+                  child: ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          topRight: Radius.circular(50)
+                        ),
+                        child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)
+                        ),
+                        child: ListView.builder( 
+                          itemCount : snapshot.data.length,
+                          itemBuilder: ( BuildContext context, int index){
+                          return Container( 
+                            decoration: BoxDecoration( 
+                              color: Colors.white,
+                              border: Border(bottom: BorderSide(color: Colors.grey[100] ) )
+                              ),
+                            child: ListTile(
+                                title: Center( 
+                                  child: Text( 
+                                    snapshot.data[index].team,
+                                    style: TextStyle( letterSpacing: 1.5 ),
+                                  ) 
+                                ),
+                                onTap: () {
+                                    Navigator.push( context, MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
+                                  },
+                                ) 
+                              );
+                      },
+                    ),
+                  ),
+                ),
               );
             }
           },
         ),
+        ]
       ), 
     );
   }
