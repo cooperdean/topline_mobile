@@ -79,7 +79,7 @@ class _LinesState extends State<LinesTab> {
 
               return Container( 
                 child: Center( 
-                  child: Text("Loading...")
+                  child: Text("Loading...", style: TextStyle(color: Colors.white) )
                  )
                );
 
@@ -107,7 +107,7 @@ class _LinesState extends State<LinesTab> {
                                 title: Center( 
                                   child: Text( 
                                     snapshot.data[index].team,
-                                    style: TextStyle( letterSpacing: 1.5 ),
+                                    style: TextStyle( letterSpacing: .4 ),
                                   ) 
                                 ),
                                 onTap: () {
