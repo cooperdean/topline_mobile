@@ -103,74 +103,74 @@ class _CategorySelectorState extends State<CategorySelector>{
                         crossAxisCount: 3,
                         children: [
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l1lw}",textAlign: TextAlign.center , ) )
+                             Container( child: Text( "#${widget.team.l1lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l1lw[0]}",textAlign: TextAlign.center , ) )
                               ] 
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l1c}",textAlign: TextAlign.center , ) ) 
+                             Container( child: Text( "#${widget.team.l1c[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l1c[0]}",textAlign: TextAlign.center , ) ) 
                                  ]
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l1rw}",textAlign: TextAlign.center , ) )
+                             Container( child: Text( "#${widget.team.l1rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l1rw[0]}",textAlign: TextAlign.center , ) )
                               ] 
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l2lw}",textAlign: TextAlign.center , ) )
+                             Container( child: Text( "#${widget.team.l2lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l2lw[0]}",textAlign: TextAlign.center , ) )
                               ] 
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l2c}",textAlign: TextAlign.center , ) ) 
+                             Container( child: Text( "#${widget.team.l2c[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l2c[0]}",textAlign: TextAlign.center , ) ) 
                                  ]
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l2rw}",textAlign: TextAlign.center , ) )
+                             Container( child: Text( "#${widget.team.l2rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l2rw[0]}",textAlign: TextAlign.center , ) )
                               ] 
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l3lw}",textAlign: TextAlign.center , ) )
+                             Container( child: Text( "#${widget.team.l3lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l3lw[0]}",textAlign: TextAlign.center , ) )
                               ] 
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l3c}",textAlign: TextAlign.center , ) ) 
+                             Container( child: Text( "#${widget.team.l3c[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l3c[0]}",textAlign: TextAlign.center , ) ) 
                                  ]
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l3rw}",textAlign: TextAlign.center , ) )
+                             Container( child: Text( "#${widget.team.l3rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l3rw[0]}",textAlign: TextAlign.center , ) )
                               ] 
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l4lw}",textAlign: TextAlign.center , ) )
+                             Container( child: Text( "#${widget.team.l4lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l4lw[0]}",textAlign: TextAlign.center , ) )
                               ] 
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l4c}",textAlign: TextAlign.center , ) ) 
+                             Container( child: Text( "#${widget.team.l4c[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l4c[0]}",textAlign: TextAlign.center , ) ) 
                                  ]
                             ), 
                           ),
                           Center ( child: Column ( children: [
-                             Container( child: Text( "#34", style: TextStyle( color: Colors.grey ) ) ),
-                             Container( child: Text( "${widget.team.l4rw}",textAlign: TextAlign.center , ) )
+                             Container( child: Text( "#${widget.team.l4rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                             Container( child: Text( "${widget.team.l4rw[0]}",textAlign: TextAlign.center , ) )
                               ] 
                             ), 
                           ),
@@ -195,12 +195,42 @@ class _CategorySelectorState extends State<CategorySelector>{
                         crossAxisSpacing: 5,
                         crossAxisCount: 2,
                         children: [
-                          Center ( child: Container( child: Text( "${widget.team.d1l}",textAlign: TextAlign.center ) ), ),
-                          Center ( child: Container( child: Text( "${widget.team.d1r}",textAlign: TextAlign.center ) ), ),
-                          Center ( child: Container( child: Text( "${widget.team.d2l}",textAlign: TextAlign.center ) ), ),
-                          Center ( child: Container( child: Text( "${widget.team.d2r}",textAlign: TextAlign.center ) ), ),
-                          Center ( child: Container( child: Text( "${widget.team.d3l}",textAlign: TextAlign.center ) ), ),
-                          Center ( child: Container( child: Text( "${widget.team.d3r}",textAlign: TextAlign.center ) ), ),
+                          Center ( child: Column( children: [ 
+                                Container( child: Text( "#${widget.team.d1l[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                                Container( child: Text( "${widget.team.d1l[0]}",textAlign: TextAlign.center ) ), 
+                              ]
+                            )
+                          ),
+                          Center ( child: Column( children: [ 
+                                Container( child: Text( "#${widget.team.d1r[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                                Container( child: Text( "${widget.team.d1r[0]}",textAlign: TextAlign.center ) ), 
+                              ]
+                            )
+                          ),
+                          Center ( child: Column( children: [ 
+                                Container( child: Text( "#${widget.team.d2l[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                                Container( child: Text( "${widget.team.d2l[0]}",textAlign: TextAlign.center ) ), 
+                              ]
+                            )
+                          ),
+                          Center ( child: Column( children: [ 
+                                Container( child: Text( "#${widget.team.d2r[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                                Container( child: Text( "${widget.team.d2r[0]}",textAlign: TextAlign.center ) ), 
+                              ]
+                            )
+                          ),
+                          Center ( child: Column( children: [ 
+                                Container( child: Text( "#${widget.team.d3l[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                                Container( child: Text( "${widget.team.d3l[0]}",textAlign: TextAlign.center ) ), 
+                              ]
+                            )
+                          ),
+                          Center ( child: Column( children: [ 
+                            Container( child: Text( "#${widget.team.d3r[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "${widget.team.d3r[0]}",textAlign: TextAlign.center ) ), 
+                            ]
+                            )
+                          ),
                         ],
                       ),
                       if( selectedIndex==2 ) Row(
@@ -224,16 +254,36 @@ class _CategorySelectorState extends State<CategorySelector>{
                           Row( 
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Container( child: Center( child: Text( "${widget.team.pp1lw}" ) ) ),
-                              Container( child: Center( child: Text( "${widget.team.pp1c}" ) ) ),
-                              Container( child: Center( child: Text( "${widget.team.pp1rw}" ) ) ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text( "#${widget.team.pp1lw[1]}", style:TextStyle( color: Colors.grey ) )) ), 
+                                Container( child: Center( child: Text( "${widget.team.pp1lw[0]}" ) ) )  
+                                ] 
+                              ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text( "#${widget.team.pp1c[1]}", style:TextStyle( color: Colors.grey ) )) ), 
+                                Container( child: Center( child: Text( "${widget.team.pp1c[0]}" ) ) )  
+                                ]
+                              ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text( "#${widget.team.pp1rw[1]}", style:TextStyle( color: Colors.grey ) )) ), 
+                                Container( child: Center( child: Text( "${widget.team.pp1rw[0]}" ) ) )  
+                                ] 
+                              ),
                             ]
                           ),
                           Row( 
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Container( child: Center( child: Text("${widget.team.pp1ld}") ) ),
-                              Container( child: Center( child: Text("${widget.team.pp1rd}") ) ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text( "#${widget.team.pp1ld[1]}", style:TextStyle( color: Colors.grey ) ) ) ), 
+                                Container( child: Center( child: Text("${widget.team.pp1ld[0]}") ) ) , 
+                                ] 
+                              ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text( "#${widget.team.pp1rd[1]}", style:TextStyle( color: Colors.grey ) )) ), 
+                                Container( child: Center( child: Text("${widget.team.pp1rd[0]}") ) ),  
+                              ] 
+                            ),
                             ],
                           )
 
@@ -260,16 +310,36 @@ class _CategorySelectorState extends State<CategorySelector>{
                           Row( 
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Container( child: Center( child: Text( "${widget.team.pp2lw}" ) ) ),
-                              Container( child: Center( child: Text( "${widget.team.pp2c}" ) ) ),
-                              Container( child: Center( child: Text( "${widget.team.pp2rw}" ) ) ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text( "#${widget.team.pp2lw[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
+                                Container( child: Center( child: Text( "${widget.team.pp2lw[0]}" ) ) ),
+                                ] 
+                              ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text( "#${widget.team.pp2c[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
+                                Container( child: Center( child: Text( "${widget.team.pp2c[0]}" ) ) ),
+                                ]
+                              ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text( "#${widget.team.pp2rw[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
+                                Container( child: Center( child: Text( "${widget.team.pp2rw[0]}" ) ) ),
+                                ]
+                              ),
                             ]
                           ),
                           Row( 
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Container( child: Center( child: Text("${widget.team.pp2ld}") ) ),
-                              Container( child: Center( child: Text("${widget.team.pp2rd}") ) ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text("#${widget.team.pp2ld[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
+                                Container( child: Center( child: Text("${widget.team.pp2ld[0]}") ) ),
+                                ]
+                              ),
+                              Column( children: [ 
+                                Container( child: Center( child: Text("#${widget.team.pp2rd[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
+                                Container( child: Center( child: Text("${widget.team.pp2rd[0]}") ) ),
+                                ]
+                              ),
                             ],
                           )
 

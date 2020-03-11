@@ -14,7 +14,7 @@ class LinesTab extends StatefulWidget {
 class _LinesState extends State<LinesTab> {
 
   Future<List<TeamLine>> _getTeamLines() async {
-    var data = await http.get("https://api.myjson.com/bins/12w2fw");
+    var data = await http.get("https://api.myjson.com/bins/ce1ma");
     var jsonData = json.decode( data.body );
     List<TeamLine> teamlines = [];
     for(var l in jsonData){
@@ -134,34 +134,34 @@ class TeamLine {
   final String team;
   final List ir;
   final String timestamp;
-  final String l1lw;
-  final String l1c;
-  final String l1rw;
-  final String l2lw;
-  final String l2c;
-  final String l2rw;
-  final String l3lw;
-  final String l3c;
-  final String l3rw;
-  final String l4lw;
-  final String l4c;
-  final String l4rw;
-  final String d1r;
-  final String d1l;
-  final String d2r;
-  final String d2l;
-  final String d3r;
-  final String d3l;
-  final String pp1lw;
-  final String pp1c;
-  final String pp1rw;
-  final String pp1ld; 
-  final String pp1rd; 
-  final String pp2lw;
-  final String pp2c;
-  final String pp2rw;
-  final String pp2ld;
-  final String pp2rd;
+  final List l1lw;
+  final List l1c;
+  final List l1rw;
+  final List l2lw;
+  final List l2c;
+  final List l2rw;
+  final List l3lw;
+  final List l3c;
+  final List l3rw;
+  final List l4lw;
+  final List l4c;
+  final List l4rw;
+  final List d1r;
+  final List d1l;
+  final List d2r;
+  final List d2l;
+  final List d3r;
+  final List d3l;
+  final List pp1lw;
+  final List pp1c;
+  final List pp1rw;
+  final List pp1ld; 
+  final List pp1rd; 
+  final List pp2lw;
+  final List pp2c;
+  final List pp2rw;
+  final List pp2ld;
+  final List pp2rd;
 
   TeamLine( 
 
