@@ -86,15 +86,15 @@ class _LinesState extends State<LinesTab> {
             } else {
               return Expanded(
                 child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        topRight: Radius.circular(50)
-                      ),
-                      child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30)
-                      ),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(50)
+                  ),
+                  child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30)
+                  ),
                       child: ListView.builder( 
                         itemCount : snapshot.data.length,
                         itemBuilder: ( BuildContext context, int index){
@@ -104,7 +104,7 @@ class _LinesState extends State<LinesTab> {
                             border: Border(bottom: BorderSide(color: Colors.grey[100] ) )
                             ),
                           child: ListTile(
-                            title: Center( 
+                            title: Center(
                               child: Text( 
                                 snapshot.data[index].team,
                                 style: TextStyle( letterSpacing: .4 ),

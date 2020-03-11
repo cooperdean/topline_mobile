@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'functions.dart';
-import 'package:intl/intl.dart';
 
 class LineUpdatesTab extends StatefulWidget {
   LineUpdatesTab( {Key key} ) : super(key: key);
