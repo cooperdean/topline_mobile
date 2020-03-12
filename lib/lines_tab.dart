@@ -15,7 +15,7 @@ class _LinesState extends State<LinesTab> {
 
   Future<List<TeamLine>> _getTeamLines() async {
     var data = await http.get("https://api.myjson.com/bins/ce1ma");
-    var jsonData = json.decode( data.body );
+    var jsonData = json.decode( utf8.decode( data.bodyBytes) );
     List<TeamLine> teamlines = [];
     for(var l in jsonData){
       TeamLine teamline = TeamLine( 
@@ -23,34 +23,17 @@ class _LinesState extends State<LinesTab> {
           l["team"],
           l["ir"],
           l["timestamp"],
-          l["l1lw"],
-          l["l1c"],
-          l["l1rw"],
-          l["l2lw"],
-          l["l2c"],
-          l["l2rw"],
-          l["l3lw"],
-          l["l3c"],
-          l["l3rw"],
-          l["l4lw"],
-          l["l4c"],
-          l["l4rw"],
-          l["d1r"],
-          l["d1l"],
-          l["d2r"],
-          l["d2l"],
-          l["d3r"],
-          l["d3l"],
-          l["pp1lw"],
-          l["pp1c"],
-          l["pp1rw"],
-          l["pp1ld"],
-          l["pp1rd"],
-          l["pp2lw"],
-          l["pp2c"],
-          l["pp2rw"],
-          l["pp2ld"],
-          l["pp2rd"]
+          l["l1lw"], l["l1c"], l["l1rw"],
+          l["l2lw"],l["l2c"],l["l2rw"],
+          l["l3lw"],l["l3c"],l["l3rw"],
+          l["l4lw"],l["l4c"],l["l4rw"],
+          l["d1r"],l["d1l"],
+          l["d2r"],l["d2l"],
+          l["d3r"],l["d3l"],
+          l["pp1lw"],l["pp1c"],l["pp1rw"],
+          l["pp1ld"],l["pp1rd"],
+          l["pp2lw"],l["pp2c"],l["pp2rw"],
+          l["pp2ld"],l["pp2rd"]
 
       );
       teamlines.add(teamline);

@@ -30,7 +30,7 @@ String formatDateOnlyDate(String timestamp) {
 }
 
 List getTeamColor(String event) {
-  if ( event == "Anaheim Ducks" ) return [ Color(0xFFFFFFFF), Color(0xFF532A44) ];
+  if ( event == "Anaheim Ducks" ) return [ Color(0xFF000000), Color(0xFFF47A38) ];
   if ( event == "Arizona Coyotes" ) return [ Color(0xFFE2D6B5), Color(0xFF8C2633) ];
   if ( event == "Boston Bruins" ) return [ Color(0xFF000000), Color(0xFFFFB81C) ];
   if ( event == "Buffalo Sabres" ) return [ Color(0xFFFCB514), Color(0xFF002654) ];
@@ -52,7 +52,7 @@ List getTeamColor(String event) {
   if ( event == "New York Rangers" ) return [ Color(0xFFFFFFFF), Color(0xFF0038A8) ];
   if ( event == "Ottawa Senators" ) return [ Color(0xFFC2912C), Color(0xFFC52032) ];
   if ( event == "Philadelphia Flyers" ) return [ Color(0xFF000000) ,Color(0xFFF74902) ];
-  if ( event == "Pittsburgh Penguins" ) return [ Color(0xFF000000), Color(0xFFCFC493) ];
+  if ( event == "Pittsburgh Penguins" ) return [ Color(0xFF000000), Color(0xFFFCB514) ];
   if ( event == "San Jose Sharks" ) return [ Color(0xFF000000), Color(0xFF006D75) ];
   if ( event == "St Louis Blues" ) return [ Color(0xFFFCB514), Color(0xFF002F87) ];
   if ( event == "Tampa Bay Lightning" ) return [ Color(0xFFFFFFFF), Color(0xFF002868) ];
