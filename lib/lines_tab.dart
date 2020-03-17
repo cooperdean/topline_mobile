@@ -14,7 +14,7 @@ class LinesTab extends StatefulWidget {
 class _LinesState extends State<LinesTab> {
 
   Future<List<TeamLine>> _getTeamLines() async {
-    var data = await http.get("https://api.myjson.com/bins/ce1ma");
+    var data = await http.get("https://api.myjson.com/bins/b6h3m");
     var jsonData = json.decode( utf8.decode( data.bodyBytes) );
     List<TeamLine> teamlines = [];
     for(var l in jsonData){
@@ -33,7 +33,8 @@ class _LinesState extends State<LinesTab> {
           l["pp1lw"],l["pp1c"],l["pp1rw"],
           l["pp1ld"],l["pp1rd"],
           l["pp2lw"],l["pp2c"],l["pp2rw"],
-          l["pp2ld"],l["pp2rd"]
+          l["pp2ld"],l["pp2rd"],
+          l["g1"],l["g2"]
 
       );
       teamlines.add(teamline);
@@ -74,11 +75,10 @@ class _LinesState extends State<LinesTab> {
                     topRight: Radius.circular(50)
                   ),
                   child: Container(
-                  decoration: BoxDecoration(
+                    decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(30)
                   ),
-                      child: ListView.builder( 
+                      child: ListView.builder(
                         itemCount : snapshot.data.length,
                         itemBuilder: ( BuildContext context, int index){
                         return Container( 
@@ -145,6 +145,8 @@ class TeamLine {
   final List pp2rw;
   final List pp2ld;
   final List pp2rd;
+  final List g1;
+  final List g2;
 
   TeamLine( 
 
@@ -178,7 +180,9 @@ class TeamLine {
     this.pp2c,
     this.pp2rw,
     this.pp2ld,
-    this.pp2rd
+    this.pp2rd,
+    this.g1,
+    this.g2
 
    );
 

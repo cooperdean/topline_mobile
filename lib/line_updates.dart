@@ -13,23 +13,18 @@ class LineUpdatesTab extends StatefulWidget {
 
 class _LineUpdatesState extends State<LineUpdatesTab> {
 
-  Future<List<LineUpdate>> _getLineUpdates() async {
+  Future< List<LineUpdate> > _getLineUpdates() async {
+    var data = await http.get("https://api.myjson.com/bins/xwge4");
+    var jsonData = json.decode(data.body);
 
-  var data = await http.get("https://api.myjson.com/bins/xwge4");
-  var jsonData = json.decode(data.body);
+    List<LineUpdate> lineupdates = [];
+    for(var l in jsonData){
+        LineUpdate lineupdate = LineUpdate( l["team"], l["player"], l["moved_to"], l["timeStamp"] );
+        lineupdates.add(lineupdate);
+      }
+    return lineupdates;
 
-  List<LineUpdate> lineupdates = [];
-
-  for(var l in jsonData){
-
-    LineUpdate lineupdate = LineUpdate( l["team"], l["player"], l["moved_to"], l["timeStamp"] );
-    lineupdates.add(lineupdate);
-
-  }
-
-  return lineupdates;
-
-}
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -82,12 +77,20 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                             if( int.tryParse( snapshot.data[index].moved_to.split(" ")[1] ) < 3 ){  
                                 return Container( 
                                   child: Card( 
-                                      child: Container(
-                                        color: Colors.white,
-                                        child: ListTile( 
-                                          title: Center( child: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ) ),
-                                          subtitle: Center( child: Text( formatDate( snapshot.data[index].timeStamp ) ) ),
-                                        ),
+                                      child: Column(
+                                        children: [ 
+                                          
+                                          Padding(
+                                            padding: const EdgeInsets.only(top:8.0),
+                                            child: Image.network("https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=small&tid="+getTeamLogo("${snapshot.data[index].team}")),
+                                          ),
+
+                                          ListTile( 
+                                            title: Center( child: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ) ),
+                                            subtitle: Center( child: Text( formatDate( snapshot.data[index].timeStamp ) ) ),
+                                          ),
+
+                                        ]
                                       ) 
                                   )
                                 );
