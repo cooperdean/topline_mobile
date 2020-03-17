@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:topline/line_updates.dart';
 import 'dart:convert';
+import 'functions.dart';
 import 'team_roster.dart';
 
 class LinesTab extends StatefulWidget {
@@ -51,7 +53,7 @@ class _LinesState extends State<LinesTab> {
         children: [ 
           
           Container(
-            height: 25,
+            height: 60,
             color: Colors.grey[900]
           ),
 
@@ -68,44 +70,58 @@ class _LinesState extends State<LinesTab> {
                );
 
             } else {
-              return Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50),
-                    topRight: Radius.circular(50)
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                      child: ListView.builder(
-                        itemCount : snapshot.data.length,
-                        itemBuilder: ( BuildContext context, int index){
-                        return Container( 
-                          decoration: BoxDecoration( 
-                            color: Colors.white,
-                            border: Border(bottom: BorderSide(color: Colors.grey[100] ) )
-                            ),
-                          child: ListTile(
-                            title: Center(
-                              child: Text( 
-                                snapshot.data[index].team,
-                                style: TextStyle( letterSpacing: .4 ),
-                              ) 
-                            ),
-                            onTap: () {
-                                Navigator.push( context, MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
-                              },
-                            ) 
-                          );
-                        },
-                      ),
+              return ClipRRect(
+                    borderRadius: BorderRadius.only( 
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(20),
                     ),
-                  ),
-                );
+                    child: Container(
+                      height: 300,
+                      decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                        child: GridView.builder(
+                            scrollDirection: Axis.horizontal,
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 3,
+                              crossAxisSpacing: 20,
+                              mainAxisSpacing: 5.0,
+                            ),
+                            itemCount : snapshot.data.length,
+                            itemBuilder: ( BuildContext context, int index){
+                            return Container( 
+                              padding: EdgeInsets.only(
+                                top: 20,
+                                left: 20,
+                                right: 20,
+                              ),
+                              decoration: BoxDecoration( 
+                                color: Colors.white,
+                                ),
+                              child: GestureDetector(
+                                child: Container(
+                                  child: Column(
+                                      children: [ 
+                                        Image.network( "https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}") ),
+                                    ]
+                                  ) 
+                                ),
+                                onTap: () {
+                                    Navigator.push( context, MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
+                                  },
+                                ) 
+                              );
+                            },
+                          ),
+                        ),
+                    );
               }
             },
           ),
+          Container( height: 60, color: Colors.grey[900], ),
+          LineUpdatesTab()
         ]
       ), 
     );

@@ -19,7 +19,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon( Icons.menu, color: Colors.yellow ),
         title: Text( "Topsix", 
           style: TextStyle( 
             color: Colors.white, 
@@ -31,21 +30,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.grey[900],
         elevation: 0,
       ),
-      body: _children[ _currentIndex ],
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: onTabTapped,
-        currentIndex: _currentIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.playlist_add_check),
-            title: new Text('Lines')
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.update),
-            title: new Text('Line Updates')
-          ),          
-        ],
-      ),
+      body: LinesTab()
     );
   }
   void onTabTapped(int index) {

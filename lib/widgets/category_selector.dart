@@ -248,46 +248,51 @@ class _CategorySelectorState extends State<CategorySelector>{
                 if( selectedIndex==2 ) GridView.count(
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
-                  childAspectRatio: 6,
-                  padding: const EdgeInsets.symmetric( horizontal: 0 ),
-                  crossAxisSpacing: 5,
-                  crossAxisCount: 1,
+                  childAspectRatio: 1.3,
+                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  crossAxisSpacing: 10,
+                  crossAxisCount: 3,
                   children: [
-                    Row( 
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column( children: [ 
-                            Container( child: Center( child: Text( "#${widget.team.pp1lw[1]}", style:TextStyle( color: Colors.grey ) )) ), 
-                            Container( child: Center( child: Text( "${widget.team.pp1lw[0]}" ) ) )  
-                          ] 
-                        ),
-                        Column( children: [ 
-                            Container( child: Center( child: Text( "#${widget.team.pp1c[1]}", style:TextStyle( color: Colors.grey ) )) ), 
-                            Container( child: Center( child: Text( "${widget.team.pp1c[0]}" ) ) )  
-                          ]
-                        ),
-                        Column( children: [ 
-                            Container( child: Center( child: Text( "#${widget.team.pp1rw[1]}", style:TextStyle( color: Colors.grey ) )) ), 
-                            Container( child: Center( child: Text( "${widget.team.pp1rw[0]}" ) ) )  
-                          ] 
-                        ),
-                      ]
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp1lw[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp1lw[0]}",textAlign: TextAlign.center , )
+                        ] 
+                      ), 
                     ),
-                    Row( 
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column( children: [ 
-                            Container( child: Center( child: Text( "#${widget.team.pp1ld[1]}", style:TextStyle( color: Colors.grey ) ) ) ), 
-                            Container( child: Center( child: Text("${widget.team.pp1ld[0]}") ) ) , 
-                          ] 
-                        ),
-                        Column( children: [ 
-                            Container( child: Center( child: Text( "#${widget.team.pp1rd[1]}", style:TextStyle( color: Colors.grey ) )) ), 
-                            Container( child: Center( child: Text("${widget.team.pp1rd[0]}") ) ),  
-                          ] 
-                        ),
-                      ],
-                    )
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp1c[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp1c[0]}",textAlign: TextAlign.center , )
+                        ]
+                      ), 
+                    ),
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp1rw[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp1rw[0]}",textAlign: TextAlign.center , )
+                        ] 
+                      ), 
+                    ),
+                  ],
+                ),
+                if( selectedIndex==2 ) GridView.count(
+                  physics: ScrollPhysics(),
+                  shrinkWrap: true,
+                  childAspectRatio: 3.5,
+                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  crossAxisSpacing: 0,
+                  crossAxisCount: 2,
+                  children: [
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp1ld[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp1ld[0]}",textAlign: TextAlign.center , )
+                        ] 
+                      ), 
+                    ),
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp1rd[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp1rd[0]}",textAlign: TextAlign.center , )
+                        ]
+                      ), 
+                    ),
                   ],
                 ),
                 if( selectedIndex==2 ) Row(
@@ -302,46 +307,51 @@ class _CategorySelectorState extends State<CategorySelector>{
                 if( selectedIndex==2 ) GridView.count(
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
-                  childAspectRatio: 6,
-                  padding: const EdgeInsets.symmetric( horizontal: 0 ),
-                  crossAxisSpacing: 5,
-                  crossAxisCount: 1,
+                  childAspectRatio: 1.3,
+                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  crossAxisSpacing: 10,
+                  crossAxisCount: 3,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column( children: [ 
-                          Container( child: Center( child: Text( "#${widget.team.pp2lw[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
-                          Container( child: Center( child: Text( "${widget.team.pp2lw[0]}" ) ) ),
-                          ] 
-                        ),
-                        Column( children: [ 
-                          Container( child: Center( child: Text( "#${widget.team.pp2c[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
-                          Container( child: Center( child: Text( "${widget.team.pp2c[0]}" ) ) ),
-                          ]
-                        ),
-                        Column( children: [ 
-                          Container( child: Center( child: Text( "#${widget.team.pp2rw[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
-                          Container( child: Center( child: Text( "${widget.team.pp2rw[0]}" ) ) ),
-                          ]
-                        ),
-                      ]
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp2lw[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp2lw[0]}",textAlign: TextAlign.center , )
+                        ] 
+                      ), 
                     ),
-                    Row( 
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column( children: [ 
-                          Container( child: Center( child: Text("#${widget.team.pp2ld[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
-                          Container( child: Center( child: Text("${widget.team.pp2ld[0]}") ) ),
-                          ]
-                        ),
-                        Column( children: [ 
-                          Container( child: Center( child: Text("#${widget.team.pp2rd[1]}", style: TextStyle( color: Colors.grey ) ) ) ),
-                          Container( child: Center( child: Text("${widget.team.pp2rd[0]}") ) ),
-                          ]
-                        ),
-                      ],
-                    )
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp2c[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp2c[0]}",textAlign: TextAlign.center , )
+                        ]
+                      ), 
+                    ),
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp2rw[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp2rw[0]}",textAlign: TextAlign.center , )
+                        ] 
+                      ), 
+                    ),
+                  ],
+                ),
+                if( selectedIndex==2 ) GridView.count(
+                  physics: ScrollPhysics(),
+                  shrinkWrap: true,
+                  childAspectRatio: 3.5,
+                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  crossAxisSpacing: 0,
+                  crossAxisCount: 2,
+                  children: [
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp2ld[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp2ld[0]}",textAlign: TextAlign.center , )
+                        ] 
+                      ), 
+                    ),
+                    Center ( child: Column ( children: [
+                          Text( "#${widget.team.pp2rd[1]}", style: TextStyle( color: Colors.grey ) ),
+                          Text( "${widget.team.pp2rd[0]}",textAlign: TextAlign.center , )
+                        ]
+                      ), 
+                    ),
                   ],
                 ),
                 if( selectedIndex==3 ) Row(

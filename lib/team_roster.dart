@@ -12,19 +12,21 @@ class TeamRoster extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
+        resizeToAvoidBottomPadding: false,
         backgroundColor: getTeamColor("${team.team}")[1],   
         appBar: AppBar(
-        iconTheme: IconThemeData( color: Colors.white ),
-        elevation: 0,
-        centerTitle: true,
-        title: Text( "${team.team}", style: TextStyle( 
-          color: Colors.white, 
-          fontFamily: "Chivo", 
-          fontStyle: FontStyle.italic,
-          fontSize: 25.0
-        ) ),
-        backgroundColor: getTeamColor("${team.team}")[1],
-      ),
+          iconTheme: IconThemeData( color: Colors.white ),
+            elevation: 0,
+            centerTitle: true,
+            title: Text( "${team.team}", style: TextStyle( 
+              color: Colors.white, 
+              fontFamily: "Chivo", 
+              fontStyle: FontStyle.italic,
+              fontSize: 25.0
+            ) 
+          ),
+          backgroundColor: getTeamColor("${team.team}")[1],
+        ),
       body: CategorySelector(team: team)
     );
   }

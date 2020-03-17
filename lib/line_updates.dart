@@ -28,15 +28,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      backgroundColor: Colors.grey[900],
-      body: Column(
-          children: [ 
-            Container(
-              height: 25,
-              color: Colors.grey[900]
-            ),
-            Container(
+    return Container(
               child: FutureBuilder(
                 future: _getLineUpdates(),
                 builder: (BuildContext context, AsyncSnapshot snapshot){
@@ -53,8 +45,8 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                     return Expanded(
                       child: ClipRRect(
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(40),
-                          topRight: Radius.circular(40)
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20)
                         ),
                         child: Container(
 
@@ -62,8 +54,8 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                               color: Colors.white,
 
                               borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(40),
-                                topRight: Radius.circular(40),
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20),
                               )
 
                             ),
@@ -105,10 +97,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                     );
                   }
                 },
-              ),
-            ),
-        ]
-      ), 
+              )
     );
   }
 }
