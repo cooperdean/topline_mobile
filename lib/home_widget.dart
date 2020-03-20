@@ -10,7 +10,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _currentIndex = 0;
   final List<Widget> _children = [
     LinesTab(),
     LineUpdatesTab(),
@@ -19,12 +18,13 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text( "Topsix", 
+        leading: Icon( Icons.menu ),
+        title: Text( "TopSix", 
           style: TextStyle( 
             color: Colors.white, 
             fontFamily: "Chivo", 
             fontStyle: FontStyle.italic,
-            fontSize: 26
+            fontSize: 40
           ) 
         ),
         backgroundColor: Colors.grey[900],
@@ -33,10 +33,7 @@ class _HomeState extends State<Home> {
       body: LinesTab()
     );
   }
-  void onTabTapped(int index) {
-  setState((){
-      _currentIndex = index;
-    });
-  }
+
 }
+
 

@@ -47,15 +47,49 @@ class _LinesState extends State<LinesTab> {
 
   @override
   Widget build(BuildContext context) {
+
+    final List<String> pageCats = ['Predicted Rosters'];
+    int selectedIndex = 0;
+
     return new Scaffold(
       backgroundColor: Colors.grey[900],
       body: Column(
         children: [ 
           
-          Container(
-            height: 60,
-            color: Colors.grey[900]
-          ),
+            Container(
+              height: 60,
+              color: Colors.grey[900],
+
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: pageCats.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      setState( () {
+                        selectedIndex = index;
+                        }
+                      );
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20.0,
+                        vertical: 14.0
+                      ),
+                      child: Text(
+                        pageCats[index],
+                        style: TextStyle(
+                          color: index == selectedIndex ? Colors.white : Colors.white38,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1
+                        )
+                      )
+                    ),
+                  );
+                }
+              )
+            ),
 
           FutureBuilder(
           future: _getTeamLines(),
@@ -63,64 +97,99 @@ class _LinesState extends State<LinesTab> {
 
             if(snapshot.data == null){
 
-              return Container( 
-                child: Center( 
-                  child: Text("Loading...", style: TextStyle(color: Colors.white) )
-                 )
-               );
+              return Expanded(
+                      child: Container( 
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: ( BorderRadius.only(
+                              topLeft: Radius.circular(40),
+                              topRight: Radius.circular(40)
+                            ) 
+                          )
+                        ),
+                        height: 220,
+                        child: Center( 
+                          child: Text("Loading...", style: TextStyle(color: Colors.black) )
+                        )
+                      ),
+                    );
 
             } else {
               return ClipRRect(
                     borderRadius: BorderRadius.only( 
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                      bottomRight: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40),
+                      bottomRight: Radius.circular(40),
+                      bottomLeft: Radius.circular(40),
                     ),
-                    child: Container(
-                      height: 300,
-                      decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                        child: GridView.builder(
-                            scrollDirection: Axis.horizontal,
-                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3,
-                              crossAxisSpacing: 20,
-                              mainAxisSpacing: 5.0,
-                            ),
-                            itemCount : snapshot.data.length,
-                            itemBuilder: ( BuildContext context, int index){
-                            return Container( 
-                              padding: EdgeInsets.only(
-                                top: 20,
-                                left: 20,
-                                right: 20,
-                              ),
-                              decoration: BoxDecoration( 
-                                color: Colors.white,
-                                ),
-                              child: GestureDetector(
-                                child: Container(
-                                  child: Column(
-                                      children: [ 
-                                        Image.network( "https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}") ),
-                                    ]
-                                  ) 
-                                ),
-                                onTap: () {
-                                    Navigator.push( context, MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
-                                  },
-                                ) 
-                              );
-                            },
+                    child: Column(
+                        children: [ 
+                          Container(
+                            height: 220,
+                            decoration: BoxDecoration(
+                            color: Colors.white,
                           ),
-                        ),
+                          child: GridView.builder(
+                              scrollDirection: Axis.horizontal,
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                crossAxisSpacing: 0,
+                                mainAxisSpacing: 0,
+                              ),
+                              itemCount : snapshot.data.length,
+                              itemBuilder: ( BuildContext context, int index){
+                              return Container( 
+                                padding: EdgeInsets.only(
+                                  top: 20,
+                                  left: 20,
+                                  right: 20,
+                                ),
+                                decoration: BoxDecoration( 
+                                  color: Colors.white,
+                                  ),
+                                child: GestureDetector(
+                                  child: Container(
+                                    child: Column(
+                                        children: [ 
+                                          Image.network( "https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}") ),
+                                      ]
+                                    ) 
+                                  ),
+                                  onTap: () {
+                                      Navigator.push( context, MaterialPageRoute(builder: (context) => TeamRoster( team: snapshot.data[index] ), ), );
+                                    },
+                                  ) 
+                                );
+                              },
+                            ),
+                          ),
+                        ]
+                      ),
                     );
-              }
-            },
-          ),
-          Container( height: 60, color: Colors.grey[900], ),
+                  }
+                },
+              ),
+            Container( 
+              height: 60, 
+              child: Row( children: [
+                  Center ( child: 
+                    Container( child: 
+                      Padding(
+                        padding: EdgeInsets.only(left:20),
+                        child: Text( 
+                          "Line Updates", 
+                          style: TextStyle(
+                            color: Colors.white, 
+                            fontSize: 20, 
+                            fontWeight: FontWeight.bold, 
+                          ) 
+                        ),
+                      ) 
+                    ), 
+                  ),
+                ],
+              )
+            ),
           LineUpdatesTab()
         ]
       ), 

@@ -28,6 +28,9 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 
   @override
   Widget build(BuildContext context) {
+
+
+
     return Container(
               child: FutureBuilder(
                 future: _getLineUpdates(),
@@ -35,72 +38,73 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 
                   if(snapshot.data == null){
 
-                    return Container( 
-                      child: Center( 
-                        child: Text("Loading...", style: TextStyle( color: Colors.white ) )
-                      )
-                    );
+                    return Expanded(
+                            child: Container( 
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(40),
+                                  topRight: Radius.circular(40),
+                                )
+                              ),
+                              height: 200,
+                              child: Center( 
+                                child: Text("Loading...", style: TextStyle( color: Colors.black ) )
+                              )
+                            ),
+                          );
 
                   } else {
                     return Expanded(
                       child: ClipRRect(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20)
-                        ),
-                        child: Container(
-
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-
                               borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                              )
-
-                            ),
-
-
-                            child: ListView.builder( 
-
-                            itemCount : snapshot.data.length,
-                            itemBuilder: (BuildContext context, int index){
-
-                            if( int.tryParse( snapshot.data[index].moved_to.split(" ")[1] ) < 3 ){  
-                                return Container( 
-                                  child: Card( 
-                                      child: Column(
-                                        children: [ 
-                                          
-                                          Padding(
-                                            padding: const EdgeInsets.only(top:8.0),
-                                            child: Image.network("https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=small&tid="+getTeamLogo("${snapshot.data[index].team}")),
-                                          ),
-
-                                          ListTile( 
-                                            title: Center( child: Text( snapshot.data[index].team+" moved "+snapshot.data[index].player+" to "+snapshot.data[index].moved_to ) ),
-                                            subtitle: Center( child: Text( formatDate( snapshot.data[index].timeStamp ) ) ),
-                                          ),
-
-                                        ]
-                                      ) 
+                                      topLeft: Radius.circular(40),
+                                      topRight: Radius.circular(40)
+                                    ),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(40),
+                                    topRight: Radius.circular(40)
                                   )
-                                );
-                            } else {
-                                return Container( height: 0, width: 0 );
-                            }
-
-                            }
+                                ),
+                              child: ListView.builder( 
+                              itemCount : snapshot.data.length,
+                              itemBuilder: (BuildContext context, int index){
+                              if( int.tryParse( snapshot.data[index].moved_to.split(" ")[1] ) < 3 ){  
+                                  return Container( 
+                                            child: Card( 
+                                                child: Column(
+                                                  children: [ 
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(top:8.0),
+                                                      child: Container( 
+                                                        height: 35,
+                                                        child: Image.network("https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}"))),
+                                                    ),
+                                                    ListTile( 
+                                                      title: Center( child: Text( snapshot.data[index].player+" to "+snapshot.data[index].moved_to ) ),
+                                                      subtitle: Center( child: Text( formatDate( snapshot.data[index].timeStamp ) ) ),
+                                                    ),
+                                                  ]
+                                                ) 
+                                              )
+                                      );
+                                  } else {
+                                      return Container( height: 0, width: 0 );
+                                  }
+                                }
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    );
-                  }
-                },
-              )
-    );
-  }
-}
+                        );
+                      }
+                    },
+                  )
+                );
+              }
+            }
 
 class LineUpdate {
 
