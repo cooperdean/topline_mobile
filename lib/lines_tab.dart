@@ -103,7 +103,9 @@ class _LinesState extends State<LinesTab> {
                           color: Colors.white,
                           borderRadius: ( BorderRadius.only(
                               topLeft: Radius.circular(40),
-                              topRight: Radius.circular(40)
+                              topRight: Radius.circular(40),
+                              bottomLeft: Radius.circular(40),
+                              bottomRight: Radius.circular(40)
                             ) 
                           )
                         ),
@@ -140,9 +142,10 @@ class _LinesState extends State<LinesTab> {
                               itemBuilder: ( BuildContext context, int index){
                               return Container( 
                                 padding: EdgeInsets.only(
-                                  top: 20,
-                                  left: 20,
-                                  right: 20,
+                                  top: 15,
+                                  left: 15,
+                                  right: 15,
+                                  bottom: 15,
                                 ),
                                 decoration: BoxDecoration( 
                                   color: Colors.white,
@@ -180,8 +183,9 @@ class _LinesState extends State<LinesTab> {
                           "Line Updates", 
                           style: TextStyle(
                             color: Colors.white, 
-                            fontSize: 20, 
-                            fontWeight: FontWeight.bold, 
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1
                           ) 
                         ),
                       ) 

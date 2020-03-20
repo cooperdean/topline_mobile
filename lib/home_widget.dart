@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'line_updates.dart';
 import 'lines_tab.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -18,13 +19,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon( Icons.menu ),
+        leading: Padding(
+          padding: const EdgeInsets.only(
+            top: 20,
+            left: 20
+          ),
+          child: FaIcon( FontAwesomeIcons.hockeyPuck ),
+        ),
         title: Text( "TopSix", 
           style: TextStyle( 
             color: Colors.white, 
             fontFamily: "Chivo", 
             fontStyle: FontStyle.italic,
-            fontSize: 40
+            fontSize: 32
           ) 
         ),
         backgroundColor: Colors.grey[900],

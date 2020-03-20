@@ -68,13 +68,13 @@ String getTeamLogo(String teamName){
 List getTeamColor(String event) {
   if ( event == "Anaheim Ducks" ) return [ Color(0xFFFFFFFF), Color(0xFFF47A38) ];
   if ( event == "Arizona Coyotes" ) return [ Color(0xFFE2D6B5), Color(0xFF8C2633) ];
-  if ( event == "Boston Bruins" ) return [ Color(0xFFFFB81C), Color(0xFF000000) ];
+  if ( event == "Boston Bruins" ) return [ Color(0xFF000000), Color(0xFFFFB81C) ];
   if ( event == "Buffalo Sabres" ) return [ Color(0xFFFCB514), Color(0xFF002654) ];
   if ( event == "Calgary Flames" ) return [ Color(0xFFF1BE48), Color(0xFFC8102E) ];
   if ( event == "Carolina Hurricanes" ) return [ Color(0xFFFFFFFF), Color(0xFFCC0000) ];
   if ( event == "Chicago Blackhawks" ) return [ Color(0xFFFFFFFF), Color(0xFFCF0A2C) ];
   if ( event == "Colorado Avalanche" ) return [ Color(0xFFFFFFFF), Color(0xFF6F263D) ];
-  if ( event == "Columbus Blue Jackets" ) return [ Color(0xFFED3B4D), Color(0xFF002654) ];
+  if ( event == "Columbus Blue Jackets" ) return [ Color(0xFFFFFFFF), Color(0xFF002654) ];
   if ( event == "Dallas Stars" ) return [ Color(0xFFFFFFFF), Color(0xFF006847) ];
   if ( event == "Detroit Red Wings" ) return [ Color(0xFFFFFFFF), Color(0xFFCE1126) ];
   if ( event == "Edmonton Oilers" ) return [ Color(0xFFFF4C00), Color(0xFF041E42) ];
