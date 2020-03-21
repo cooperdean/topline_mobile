@@ -65,6 +65,41 @@ class HelpPage extends StatelessWidget {
                 )
               ),
             ],
+          ),
+                    Padding(
+            padding: const EdgeInsets.only( top:20, left:20 ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text( "Disclaimer", 
+                  style:( TextStyle(
+                      color: Colors.white,               
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1 
+                    )
+                  ) 
+                ),
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                child: FaIcon( FontAwesomeIcons.exclamationCircle, color: Colors.white, size: 65, )
+              ),
+              Container(
+                padding: EdgeInsets.symmetric( vertical:20 ),
+                child: Text(
+              "The information displayed\non TopSix does not represent\nactual team rosters, only\npredictions.",
+                  style: TextStyle( 
+                    color: Colors.white,
+                    fontSize: 17,
+                  )
+                )
+              ),
+            ],
           )
         ]
       )
