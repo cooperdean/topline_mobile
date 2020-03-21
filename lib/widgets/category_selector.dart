@@ -189,7 +189,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                 if( selectedIndex==2 || selectedIndex==0 ) Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding( padding: EdgeInsets.only( top: 100 ), ),
+                    Padding( padding: EdgeInsets.only( top:100 ),),
                     Expanded( child: Divider( color: Colors.grey ) ),
                     Center ( child: Container( child: Text( "LD",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
@@ -201,7 +201,11 @@ class _CategorySelectorState extends State<CategorySelector>{
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
                   childAspectRatio: 2,
-                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  padding: const EdgeInsets.only( 
+                    left: 20,
+                    right: 20,
+                    top: 20
+                  ),
                   crossAxisSpacing: 5,
                   crossAxisCount: 2,
                   children: [
@@ -246,9 +250,9 @@ class _CategorySelectorState extends State<CategorySelector>{
                 if( selectedIndex==3 || selectedIndex==0 ) Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding( padding: EdgeInsets.only( top: 100 ), ),
+                    Padding( padding: EdgeInsets.only( top: 50 ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
-                    Center ( child: Container( child: Text( "PP 1",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+                    Center ( child: Container( child: Text( "Powerplay 1",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
                   ],
                 ),
@@ -256,7 +260,11 @@ class _CategorySelectorState extends State<CategorySelector>{
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
                   childAspectRatio: 1.3,
-                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  padding: const EdgeInsets.only( 
+                    left: 20,
+                    right: 20,
+                    top: 30
+                  ),
                   crossAxisSpacing: 10,
                   crossAxisCount: 3,
                   children: [
@@ -307,7 +315,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                   children: [
                     Padding( padding: EdgeInsets.only( top: 100 ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
-                    Center ( child: Container( child: Text( "PP 2",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+                    Center ( child: Container( child: Text( "Powerplay 2",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
                   ],
                 ),
@@ -315,7 +323,11 @@ class _CategorySelectorState extends State<CategorySelector>{
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
                   childAspectRatio: 1.3,
-                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  padding: const EdgeInsets.only( 
+                    left: 20,
+                    right: 20,
+                    top: 20
+                  ),
                   crossAxisSpacing: 10,
                   crossAxisCount: 3,
                   children: [
@@ -366,7 +378,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                   children: [
                     Padding( padding: EdgeInsets.only( top: 100 ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
-                    Center ( child: Container( child: Text( "G",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
+                    Center ( child: Container( child: Text( "Goalies",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
                   ],                
                 ),

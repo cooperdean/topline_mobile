@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:topline/widgets/help_page.dart';
 import 'line_updates.dart';
 import 'lines_tab.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,7 +25,10 @@ class _HomeState extends State<Home> {
             top: 20,
             left: 20
           ),
-          child: FaIcon( FontAwesomeIcons.hockeyPuck ),
+          child: GestureDetector(
+            onTap: () { Navigator.push( context, MaterialPageRoute(builder: (context) => HelpPage() ) ); },
+            child: FaIcon( FontAwesomeIcons.solidQuestionCircle )
+            ),
         ),
         title: Text( "TopSix", 
           style: TextStyle( 

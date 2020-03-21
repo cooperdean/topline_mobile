@@ -48,7 +48,7 @@ class _LinesState extends State<LinesTab> {
   @override
   Widget build(BuildContext context) {
 
-    final List<String> pageCats = ['Predicted Rosters'];
+    final List<String> pageCats = ['Predicted Lineups'];
     int selectedIndex = 0;
 
     return new Scaffold(
@@ -101,12 +101,7 @@ class _LinesState extends State<LinesTab> {
                       child: Container( 
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: ( BorderRadius.only(
-                              topLeft: Radius.circular(40),
-                              topRight: Radius.circular(40),
-                              bottomLeft: Radius.circular(40),
-                              bottomRight: Radius.circular(40)
-                            ) 
+                          borderRadius: ( BorderRadius.all( Radius.circular(40) ) 
                           )
                         ),
                         height: 220,
@@ -118,12 +113,7 @@ class _LinesState extends State<LinesTab> {
 
             } else {
               return ClipRRect(
-                    borderRadius: BorderRadius.only( 
-                      topLeft: Radius.circular(40),
-                      topRight: Radius.circular(40),
-                      bottomRight: Radius.circular(40),
-                      bottomLeft: Radius.circular(40),
-                    ),
+                    borderRadius: BorderRadius.all( Radius.circular(40) ),
                     child: Column(
                         children: [ 
                           Container(
