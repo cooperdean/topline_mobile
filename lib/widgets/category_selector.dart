@@ -10,7 +10,7 @@ class CategorySelector extends StatefulWidget {
 }
 class _CategorySelectorState extends State<CategorySelector>{
 
-  final List<String> lineCats = ['All Lines', 'Forwards', 'Defense', 'Powerplay', 'Goalies', 'Injured'];
+  final List<String> lineCats = ['Entire Lineup', 'Forwards', 'Defense', 'Powerplay', 'Goalies', 'Injured'];
   int selectedIndex = 0;
 
   @override
@@ -64,7 +64,7 @@ class _CategorySelectorState extends State<CategorySelector>{
           child: ListView( 
             children: [
               Container( 
-                padding: EdgeInsets.only( top:30 ),
+                padding: EdgeInsets.only( top:30, bottom:30 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children:[
@@ -94,7 +94,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                 if( selectedIndex==1 || selectedIndex==0 ) Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding( padding: EdgeInsets.only( top: 100 ), ),
+                    Padding( padding: EdgeInsets.only( top: 50 ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
                     Center ( child: Container( child: Text( "LW",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
@@ -108,7 +108,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
                   childAspectRatio: 1.3,
-                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  padding: const EdgeInsets.only( left: 20, right: 20, top: 20),
                   crossAxisSpacing: 10,
                   crossAxisCount: 3,
                   children: [
@@ -189,7 +189,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                 if( selectedIndex==2 || selectedIndex==0 ) Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding( padding: EdgeInsets.only( top:100 ),),
+                    Padding( padding: EdgeInsets.only( top:50 ),),
                     Expanded( child: Divider( color: Colors.grey ) ),
                     Center ( child: Container( child: Text( "LD",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
@@ -201,11 +201,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
                   childAspectRatio: 2,
-                  padding: const EdgeInsets.only( 
-                    left: 20,
-                    right: 20,
-                    top: 20
-                  ),
+                  padding: const EdgeInsets.only( left: 20, right: 20, top: 30 ),
                   crossAxisSpacing: 5,
                   crossAxisCount: 2,
                   children: [
@@ -263,7 +259,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                   padding: const EdgeInsets.only( 
                     left: 20,
                     right: 20,
-                    top: 30
+                    top: 40
                   ),
                   crossAxisSpacing: 10,
                   crossAxisCount: 3,
@@ -355,7 +351,12 @@ class _CategorySelectorState extends State<CategorySelector>{
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
                   childAspectRatio: 3.5,
-                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  padding: const EdgeInsets.only( 
+                    left: 20,
+                    right: 20,
+                    top: 20,
+                    bottom: 20
+                  ),
                   crossAxisSpacing: 0,
                   crossAxisCount: 2,
                   children: [
@@ -376,7 +377,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                 if( selectedIndex==4 || selectedIndex==0 ) Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding( padding: EdgeInsets.only( top: 100 ), ),
+                    Padding( padding: EdgeInsets.only( top: 50 ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
                     Center ( child: Container( child: Text( "Goalies",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
@@ -386,7 +387,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
                   childAspectRatio: 2,
-                  padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                  padding: const EdgeInsets.only( left: 20, right: 20, top: 20 ),
                   crossAxisSpacing: 5,
                   crossAxisCount: 2,
                   children: [
@@ -407,7 +408,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                 if( selectedIndex==5 || selectedIndex==0 ) Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding( padding: EdgeInsets.only( top: 100 ), ),
+                    Padding( padding: EdgeInsets.only( top: 50 ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),
                     Center ( child: Container( child: Text( "Out",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
                     Expanded( child: Divider( color: Colors.grey ) ),

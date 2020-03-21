@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:topline/line_updates.dart';
@@ -164,7 +165,9 @@ class _LinesState extends State<LinesTab> {
               ),
             Container( 
               height: 60, 
-              child: Row( children: [
+              child: Row( 
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                   Center ( child: 
                     Container( child: 
                       Padding(

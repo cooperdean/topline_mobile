@@ -75,19 +75,10 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                               if( int.tryParse( snapshot.data[index].moved_to.split(" ")[1] ) < 3 ){  
                                   return Container( 
                                             child: Card( 
-                                                child: Column(
-                                                  children: [ 
-                                                    Padding(
-                                                      padding: const EdgeInsets.only(top:8.0),
-                                                      child: Container( 
-                                                        height: 35,
-                                                        child: Image.network("https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}"))),
-                                                    ),
-                                                    ListTile( 
-                                                      title: Center( child: Text( snapshot.data[index].player+" to "+snapshot.data[index].moved_to ) ),
-                                                      subtitle: Center( child: Text( formatDate( snapshot.data[index].timeStamp ) ) ),
-                                                    ),
-                                                  ]
+                                                child: ListTile( 
+                                                  leading: Image.network("https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}")),
+                                                  title: Text( snapshot.data[index].player+" to "+snapshot.data[index].moved_to ),
+                                                  subtitle: Text( formatDate( snapshot.data[index].timeStamp ) ),
                                                 ) 
                                               )
                                       );
@@ -97,7 +88,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                                 }
                               ),
                             ),
-                          ),
+                        ),
                         );
                       }
                     },
