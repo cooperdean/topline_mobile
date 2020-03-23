@@ -114,7 +114,10 @@ class _LinesState extends State<LinesTab> {
 
             } else {
               return ClipRRect(
-                    borderRadius: BorderRadius.all( Radius.circular(40) ),
+                    borderRadius: BorderRadius.only( 
+                      topLeft: Radius.circular(40),
+                      bottomLeft: Radius.circular(40),
+                    ),
                     child: Column(
                         children: [ 
                           Container(

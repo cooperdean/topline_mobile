@@ -12,7 +12,7 @@ class HelpPage extends StatelessWidget {
             color: Colors.white, 
             fontFamily: "Chivo", 
             fontStyle: FontStyle.italic,
-            fontSize: 32
+            fontSize: 40
           ) 
         ),
         backgroundColor: Colors.grey[900],
@@ -57,7 +57,7 @@ class HelpPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric( vertical:20 ),
                 child: Text(
-                  "Cooper Dean\ngithub.com/cooperdean\ncooperdean30@gmail.com\n1-306-768-8712",
+                  "Cooper Dean\ngithub.com/cooperdean\ninfo@topsix.com\n1-306-768-8712",
                   style: TextStyle( 
                     color: Colors.white,
                     fontSize: 17,

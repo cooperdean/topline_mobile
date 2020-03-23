@@ -10,7 +10,7 @@ class CategorySelector extends StatefulWidget {
 }
 class _CategorySelectorState extends State<CategorySelector>{
 
-  final List<String> lineCats = ['Entire Lineup', 'Forwards', 'Defense', 'Powerplay', 'Goalies', 'Injured'];
+  final List<String> lineCats = ['Team Lineup', 'Forwards', 'Defense', 'Powerplay', 'Goalies', 'Injured'];
   int selectedIndex = 0;
 
   @override
@@ -354,7 +354,6 @@ class _CategorySelectorState extends State<CategorySelector>{
                   padding: const EdgeInsets.only( 
                     left: 20,
                     right: 20,
-                    top: 20,
                     bottom: 20
                   ),
                   crossAxisSpacing: 0,

@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
             color: Colors.white, 
             fontFamily: "Chivo", 
             fontStyle: FontStyle.italic,
-            fontSize: 32
+            fontSize: 40
           ) 
         ),
         backgroundColor: Colors.grey[900],

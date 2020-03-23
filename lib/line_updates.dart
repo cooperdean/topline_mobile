@@ -43,7 +43,6 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(40),
                                   topRight: Radius.circular(40),
                                 )
                               ),
@@ -58,14 +57,12 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                     return Expanded(
                       child: ClipRRect(
                               borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(40),
                                       topRight: Radius.circular(40)
                                     ),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(40),
                                     topRight: Radius.circular(40)
                                   )
                                 ),

@@ -84,7 +84,7 @@ List getTeamColor(String event) {
   if ( event == "Montreal Canadiens" ) return [ Color(0xFFFFFFFF), Color(0xFFAF1E2D) ];
   if ( event == "Nashville Predators" ) return [ Color(0xFFFFB81C), Color(0xFF041E42) ];
   if ( event == "New Jersey Devils" ) return [ Color(0xFFFFFFFF), Color(0xFFCE1126) ];
-  if ( event == "New York Islanders" ) return [ Color(0xFFF47D30), Color(0xFF00539B) ];
+  if ( event == "New York Islanders" ) return [ Color(0xFFF47D30), Color(0xFF003876) ];
   if ( event == "New York Rangers" ) return [ Color(0xFFFFFFFF), Color(0xFF0038A8) ];
   if ( event == "Ottawa Senators" ) return [ Color(0xFFC2912C), Color(0xFFC52032) ];
   if ( event == "Philadelphia Flyers" ) return [ Color(0xFF000000) ,Color(0xFFF74902) ];
@@ -94,7 +94,7 @@ List getTeamColor(String event) {
   if ( event == "Tampa Bay Lightning" ) return [ Color(0xFFFFFFFF), Color(0xFF002868) ];
   if ( event == "Toronto Maple Leafs" ) return [ Color(0xFFFFFFFF), Color(0xFF00205B) ];
   if ( event == "Vancouver Canucks" ) return [ Color(0xFF00843D), Color(0xFF00205B) ];
-  if ( event == "Vegas Golden Knights" ) return [ Color(0xFFB4975A), Color(0xFF333F42) ];
+  if ( event == "Vegas Golden Knights" ) return [ Color(0xFF333F42), Color(0xFFB4975A) ];
   if ( event == "Washington Capitals" ) return [ Color(0xFF041E42), Color(0xFFC8102E) ];
   if ( event == "Winnipeg Jets" ) return [ Color(0xFF7EC0EE), Color(0xFF041E42) ];
   return [ Colors.black, Colors.white ];
