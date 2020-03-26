@@ -50,7 +50,7 @@ String getTeamLogo(String teamName){
   if ( teamName == "Nashville Predators" || teamName == "NSH" ) return "3705" ;
   if ( teamName == "New Jersey Devils" || teamName == "NJD" ) return "3704" ;
   if ( teamName == "New York Islanders" || teamName == "NYI" ) return "3703" ;
-  if ( teamName == "New York Rangers" || teamName == " NYR" ) return "3701" ;
+  if ( teamName == "New York Rangers" || teamName == "NYR" ) return "3701" ;
   if ( teamName == "Ottawa Senators" || teamName == "OTT" ) return "3700" ;
   if ( teamName == "Philadelphia Flyers" || teamName == "PHI" ) return "3699" ;
   if ( teamName == "Pittsburgh Penguins" || teamName == "PIT" ) return "3697" ;
@@ -94,7 +94,7 @@ List getTeamColor(String event) {
   if ( event == "Tampa Bay Lightning" ) return [ Color(0xFFFFFFFF), Color(0xFF002868) ];
   if ( event == "Toronto Maple Leafs" ) return [ Color(0xFFFFFFFF), Color(0xFF00205B) ];
   if ( event == "Vancouver Canucks" ) return [ Color(0xFF00843D), Color(0xFF00205B) ];
-  if ( event == "Vegas Golden Knights" ) return [ Color(0xFF333F42), Color(0xFFB4975A) ];
+  if ( event == "Vegas Golden Knights" ) return [ Color(0xFF333F42), Color(0xFF1B1B1B) ];
   if ( event == "Washington Capitals" ) return [ Color(0xFF041E42), Color(0xFFC8102E) ];
   if ( event == "Winnipeg Jets" ) return [ Color(0xFF7EC0EE), Color(0xFF041E42) ];
   return [ Colors.black, Colors.white ];

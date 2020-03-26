@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:topline/line_updates.dart';
+import 'package:topline/paturls.dart';
 import 'dart:convert';
 import 'functions.dart';
 import 'team_roster.dart';
@@ -17,7 +17,7 @@ class LinesTab extends StatefulWidget {
 class _LinesState extends State<LinesTab> {
 
   Future<List<TeamLine>> _getTeamLines() async {
-    var data = await http.get("https://api.myjson.com/bins/b6h3m");
+    var data = await http.get(linesUrl);
     var jsonData = json.decode( utf8.decode( data.bodyBytes) );
     List<TeamLine> teamlines = [];
     for(var l in jsonData){
@@ -49,18 +49,16 @@ class _LinesState extends State<LinesTab> {
   @override
   Widget build(BuildContext context) {
 
-    final List<String> pageCats = ['Predicted Lineups'];
+    final List<String> pageCats = ['Projected Lineups'];
     int selectedIndex = 0;
 
     return new Scaffold(
       backgroundColor: Colors.grey[900],
       body: Column(
-        children: [ 
-          
+        children: [         
             Container(
               height: 60,
               color: Colors.grey[900],
-
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: pageCats.length,
@@ -69,6 +67,7 @@ class _LinesState extends State<LinesTab> {
                     onTap: () {
                       setState( () {
                         selectedIndex = index;
+                        print(selectedIndex);
                         }
                       );
                     },
@@ -98,34 +97,37 @@ class _LinesState extends State<LinesTab> {
 
             if(snapshot.data == null){
 
-              return Expanded(
-                      child: Container( 
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: ( BorderRadius.all( Radius.circular(40) ) 
-                          )
-                        ),
-                        height: 220,
-                        child: Center( 
-                          child: Text("Loading...", style: TextStyle(color: Colors.black) )
-                        )
-                      ),
-                    );
+              return Container( 
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: ( 
+                    BorderRadius.only( 
+                      topLeft: Radius.circular(60),
+                      bottomLeft: Radius.circular(60),                              
+                     ) 
+                  )
+                ),
+                height: 210,
+                child: Center( 
+                  child: CircularProgressIndicator()
+                )
+              );
 
             } else {
               return ClipRRect(
                     borderRadius: BorderRadius.only( 
-                      topLeft: Radius.circular(40),
-                      bottomLeft: Radius.circular(40),
+                      topLeft: Radius.circular(60),
+                      bottomLeft: Radius.circular(60),
                     ),
                     child: Column(
                         children: [ 
                           Container(
-                            height: 220,
+                            height: 210,
                             decoration: BoxDecoration(
                             color: Colors.white,
                           ),
                           child: GridView.builder(
+                              padding: EdgeInsets.only( left:8.0 ),
                               scrollDirection: Axis.horizontal,
                               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 3,
@@ -136,10 +138,10 @@ class _LinesState extends State<LinesTab> {
                               itemBuilder: ( BuildContext context, int index){
                               return Container( 
                                 padding: EdgeInsets.only(
-                                  top: 15,
-                                  left: 15,
-                                  right: 15,
-                                  bottom: 15,
+                                  top: 13,
+                                  left: 13,
+                                  right: 13,
+                                  bottom: 13,
                                 ),
                                 decoration: BoxDecoration( 
                                   color: Colors.white,
@@ -148,8 +150,8 @@ class _LinesState extends State<LinesTab> {
                                   child: Container(
                                     child: Column(
                                         children: [ 
-                                          Image.network( "https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}") ),
-                                      ]
+                                          Image.network( "https://sportteamslogo.com/api?key="+logoKey+"&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}" ) ),
+                                        ]
                                     ) 
                                   ),
                                   onTap: () {

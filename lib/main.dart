@@ -10,10 +10,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     // debugPaintSizeEnabled = true;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       theme: ThemeData(
         primaryColor: Colors.grey[900],
-        accentColor: Colors.yellow 
+        accentColor: Colors.black 
       ),
       title: "Topline",
       home: Home(),

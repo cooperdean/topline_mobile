@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:topline/paturls.dart';
 import 'dart:convert';
 import 'functions.dart';
 
@@ -14,7 +15,7 @@ class LineUpdatesTab extends StatefulWidget {
 class _LineUpdatesState extends State<LineUpdatesTab> {
 
   Future< List<LineUpdate> > _getLineUpdates() async {
-    var data = await http.get("https://api.myjson.com/bins/xwge4");
+    var data = await http.get(lineUpdatesUrl);
     var jsonData = json.decode(data.body);
 
     List<LineUpdate> lineupdates = [];
@@ -29,8 +30,6 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
   @override
   Widget build(BuildContext context) {
 
-
-
     return Container(
               child: FutureBuilder(
                 future: _getLineUpdates(),
@@ -43,12 +42,12 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(40),
+                                  topRight: Radius.circular(80),
                                 )
                               ),
                               height: 200,
                               child: Center( 
-                                child: Text("Loading...", style: TextStyle( color: Colors.black ) )
+                                child: CircularProgressIndicator()
                               )
                             ),
                           );
@@ -57,13 +56,13 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                     return Expanded(
                       child: ClipRRect(
                               borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(40)
+                                      topRight: Radius.circular(80)
                                     ),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(40)
+                                    topRight: Radius.circular(80)
                                   )
                                 ),
                               child: ListView.builder( 
@@ -71,13 +70,17 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                               itemBuilder: (BuildContext context, int index){
                               if( int.tryParse( snapshot.data[index].moved_to.split(" ")[1] ) < 3 ){  
                                   return Container( 
-                                            child: Card( 
-                                                child: ListTile( 
-                                                  leading: Image.network("https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}")),
-                                                  title: Text( snapshot.data[index].player+" to "+snapshot.data[index].moved_to ),
-                                                  subtitle: Text( formatDate( snapshot.data[index].timeStamp ) ),
-                                                ) 
-                                              )
+                                            child: Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal:8.0),
+                                              child: Card( 
+                                                  child: ListTile( 
+                                                    leading: Image.network("https://sportteamslogo.com/api?key="+logoKey+"&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}")),
+                                                    title: Text( snapshot.data[index].player+" to "+snapshot.data[index].moved_to ),
+                                                    subtitle: Text( formatDate( snapshot.data[index].timeStamp ) ),
+                                                    trailing: Icon( Icons.arrow_right ),
+                                                  ) 
+                                                ),
+                                            )
                                       );
                                   } else {
                                       return Container( height: 0, width: 0 );
