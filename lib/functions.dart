@@ -29,7 +29,7 @@ String formatDateOnlyDate(String timestamp) {
   return DateFormat('MM/dd a').format(converted);
 }
 
-String getTeamLogo(String teamName){
+String getTeamLogo( String teamName ){
 
   if ( teamName == "Anaheim Ducks" || teamName == "ANA" ) return "3675" ;
   if ( teamName == "Arizona Coyotes" || teamName == "ARI" ) return "3698" ;

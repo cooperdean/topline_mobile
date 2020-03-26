@@ -73,11 +73,11 @@ class _CategorySelectorState extends State<CategorySelector>{
                           children: [ 
                               Image.network( 
                                 "https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=big&tid="+getTeamLogo("${widget.team.team}"),
-                                scale: 1.5,
+                                scale: 1.6,
                             ) 
                           ]
                         ),
-                        Column( 
+                        Column(
                           children: [
                             Icon( Icons.update ),
                             Center( child: Text( 
