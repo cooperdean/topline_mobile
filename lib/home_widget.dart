@@ -20,6 +20,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         leading: Padding(
           padding: const EdgeInsets.only(
             top: 20,

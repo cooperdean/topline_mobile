@@ -57,7 +57,7 @@ class HelpPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric( vertical:20 ),
                 child: Text(
-                  "Cooper Dean\ngithub.com/cooperdean\ninfo@topsix.com\n1-306-768-8712",
+                  "Cooper Dean\ngithub.com/cooperdean\ninfo@topsix.com",
                   style: TextStyle( 
                     color: Colors.white,
                     fontSize: 17,

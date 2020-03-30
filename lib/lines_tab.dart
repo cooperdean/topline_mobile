@@ -52,13 +52,13 @@ class _LinesState extends State<LinesTab> {
     final List<String> pageCats = ['Projected Lineups'];
     int selectedIndex = 0;
 
-    return new Scaffold(
+    return Scaffold(
       backgroundColor: Colors.grey[900],
       body: Column(
         children: [         
             Container(
               height: 60,
-              color: Colors.grey[900],
+              color: Colors.transparent,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: pageCats.length,

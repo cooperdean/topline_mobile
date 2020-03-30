@@ -20,8 +20,7 @@ class _CategorySelectorState extends State<CategorySelector>{
 
         Container(
           height: 60,
-          color: getTeamColor("${widget.team.team}")[1],
-
+          color: Colors.transparent,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: lineCats.length,
@@ -51,17 +50,20 @@ class _CategorySelectorState extends State<CategorySelector>{
             }
           )
         ),
-
       Expanded(
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
-              topRight: Radius.circular(80),
+              topRight: Radius.circular(60),
+              topLeft: Radius.circular(60)
             )
           ),
           child: ClipRRect(
-              borderRadius: BorderRadius.only(topRight:Radius.circular(80)),
+              borderRadius: BorderRadius.only(
+                topRight:Radius.circular(60), 
+                topLeft:Radius.circular(60)
+              ),
               child: ListView( 
               children: [
                 Container( 
@@ -112,78 +114,78 @@ class _CategorySelectorState extends State<CategorySelector>{
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 1.3,
-                    padding: const EdgeInsets.only( left: 20, right: 20, top: 20),
+                    padding: const EdgeInsets.only( left: 20, right: 20, top: 30),
                     crossAxisSpacing: 10,
                     crossAxisCount: 3,
                     children: [
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l1lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "LW1 - #${widget.team.l1lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l1lw[0]}",textAlign: TextAlign.center , ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l1c[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "C1 - #${widget.team.l1c[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l1c[0]}",textAlign: TextAlign.center , ) ) 
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l1rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "RW1 - #${widget.team.l1rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l1rw[0]}",textAlign: TextAlign.center , ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l2lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "LW2 - #${widget.team.l2lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l2lw[0]}",textAlign: TextAlign.center , ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l2c[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "C2 - #${widget.team.l2c[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l2c[0]}",textAlign: TextAlign.center , ) ) 
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l2rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "RW2 - #${widget.team.l2rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l2rw[0]}",textAlign: TextAlign.center , ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l3lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "LW3 - #${widget.team.l3lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l3lw[0]}",textAlign: TextAlign.center , ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l3c[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "C3 - #${widget.team.l3c[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l3c[0]}",textAlign: TextAlign.center , ) ) 
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l3rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "RW3 - #${widget.team.l3rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l3rw[0]}",textAlign: TextAlign.center , ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l4lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "LW4 - #${widget.team.l4lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l4lw[0]}",textAlign: TextAlign.center , ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l4c[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "C4 - #${widget.team.l4c[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l4c[0]}",textAlign: TextAlign.center , ) ) 
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Container( child: Text( "#${widget.team.l4rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "RW4 - #${widget.team.l4rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l4rw[0]}",textAlign: TextAlign.center , ) )
                           ] 
                         ), 
@@ -204,43 +206,43 @@ class _CategorySelectorState extends State<CategorySelector>{
                   if( selectedIndex==2 || selectedIndex==0 ) GridView.count(
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
-                    childAspectRatio: 2,
+                    childAspectRatio: 2.2,
                     padding: const EdgeInsets.only( left: 20, right: 20, top: 30 ),
                     crossAxisSpacing: 5,
                     crossAxisCount: 2,
                     children: [
                       Center ( child: Column( children: [ 
-                            Container( child: Text( "#${widget.team.d1l[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "DL1 - #${widget.team.d1l[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.d1l[0]}",textAlign: TextAlign.center ) ), 
                           ]
                         )
                       ),
                       Center ( child: Column( children: [ 
-                            Container( child: Text( "#${widget.team.d1r[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "D1R - #${widget.team.d1r[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.d1r[0]}",textAlign: TextAlign.center ) ), 
                           ]
                         )
                       ),
                       Center ( child: Column( children: [ 
-                            Container( child: Text( "#${widget.team.d2l[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "D2L - #${widget.team.d2l[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.d2l[0]}",textAlign: TextAlign.center ) ), 
                           ]
                         )
                       ),
                       Center ( child: Column( children: [ 
-                            Container( child: Text( "#${widget.team.d2r[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "D2R - #${widget.team.d2r[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.d2r[0]}",textAlign: TextAlign.center ) ), 
                           ]
                         )
                       ),
                       Center ( child: Column( children: [ 
-                            Container( child: Text( "#${widget.team.d3l[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "D3L - #${widget.team.d3l[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.d3l[0]}",textAlign: TextAlign.center ) ), 
                           ]
                         )
                       ),
                       Center ( child: Column( children: [ 
-                            Container( child: Text( "#${widget.team.d3r[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "D3R - #${widget.team.d3r[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.d3r[0]}",textAlign: TextAlign.center ) ), 
                           ]
                         )
@@ -269,19 +271,19 @@ class _CategorySelectorState extends State<CategorySelector>{
                     crossAxisCount: 3,
                     children: [
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp1lw[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP1LW - #${widget.team.pp1lw[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp1lw[0]}",textAlign: TextAlign.center , )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp1c[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP1C - #${widget.team.pp1c[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp1c[0]}",textAlign: TextAlign.center , )
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp1rw[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP1RW - #${widget.team.pp1rw[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp1rw[0]}",textAlign: TextAlign.center , )
                           ] 
                         ), 
@@ -297,13 +299,13 @@ class _CategorySelectorState extends State<CategorySelector>{
                     crossAxisCount: 2,
                     children: [
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp1ld[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP1LD - #${widget.team.pp1ld[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp1ld[0]}",textAlign: TextAlign.center , )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp1rd[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP1RD - #${widget.team.pp1rd[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp1rd[0]}",textAlign: TextAlign.center , )
                           ]
                         ), 
@@ -332,19 +334,19 @@ class _CategorySelectorState extends State<CategorySelector>{
                     crossAxisCount: 3,
                     children: [
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp2lw[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP2LW - #${widget.team.pp2lw[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp2lw[0]}",textAlign: TextAlign.center , )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp2c[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP2C - #${widget.team.pp2c[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp2c[0]}",textAlign: TextAlign.center , )
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp2rw[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP2RW - #${widget.team.pp2rw[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp2rw[0]}",textAlign: TextAlign.center , )
                           ] 
                         ), 
@@ -364,13 +366,13 @@ class _CategorySelectorState extends State<CategorySelector>{
                     crossAxisCount: 2,
                     children: [
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp2ld[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP2LD - #${widget.team.pp2ld[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp2ld[0]}",textAlign: TextAlign.center , )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
-                            Text( "#${widget.team.pp2rd[1]}", style: TextStyle( color: Colors.grey ) ),
+                            Text( "PP2RD - #${widget.team.pp2rd[1]}", style: TextStyle( color: Colors.grey ) ),
                             Text( "${widget.team.pp2rd[0]}",textAlign: TextAlign.center , )
                           ]
                         ), 
@@ -390,18 +392,18 @@ class _CategorySelectorState extends State<CategorySelector>{
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 2,
-                    padding: const EdgeInsets.only( left: 20, right: 20, top: 20 ),
+                    padding: const EdgeInsets.only( left: 20, right: 20, top: 40 ),
                     crossAxisSpacing: 5,
                     crossAxisCount: 2,
                     children: [
                       Center ( child: Column( children: [ 
-                            Container( child: Text( "#${widget.team.g1[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "G1 - #${widget.team.g1[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.g1[0]}",textAlign: TextAlign.center ) ), 
                           ]
                         )
                       ),
                       Center ( child: Column( children: [ 
-                            Container( child: Text( "#${widget.team.g2[1]}", style: TextStyle( color: Colors.grey ) ) ),
+                            Container( child: Text( "G2 - #${widget.team.g2[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.g2[0]}",textAlign: TextAlign.center ) ), 
                           ]
                         )
@@ -421,14 +423,13 @@ class _CategorySelectorState extends State<CategorySelector>{
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 3.5,
-                    padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                    padding: const EdgeInsets.all( 20 ),
                     crossAxisSpacing: 5,
                     crossAxisCount: 2,
                     children: [
                       for (var ir in widget.team.ir) Center( child: Text( "${ir}" ) )
                     ],
                   ),
-                  Container( height: 100 )
                 ]
               ),
           ),

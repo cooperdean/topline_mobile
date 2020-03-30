@@ -16,7 +16,7 @@ class App extends StatelessWidget {
         primaryColor: Colors.grey[900],
         accentColor: Colors.black 
       ),
-      title: "Topline",
+      title: "TopSix",
       home: Home(),
     );
   }
