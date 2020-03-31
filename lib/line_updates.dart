@@ -56,13 +56,15 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                     return Expanded(
                       child: ClipRRect(
                               borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(80)
+                                      topRight: Radius.circular(60),
+                                      topLeft: Radius.circular(60)
                                     ),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(80)
+                                    topRight: Radius.circular(60),
+                                    topLeft: Radius.circular(60)
                                   )
                                 ),
                               child: ListView.builder( 

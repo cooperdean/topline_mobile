@@ -87,7 +87,7 @@ List getTeamColor(String event) {
   if ( event == "New York Islanders" ) return [ Color(0xFF00233f), Color(0xFF003876) ];
   if ( event == "New York Rangers" ) return [ Color(0xFF0649d1), Color(0xFF0038A8) ];
   if ( event == "Ottawa Senators" ) return [ Color(0xFF70131c), Color(0xFFC52032) ];
-  if ( event == "Philadelphia Flyers" ) return [ Color(0xFF7c2604) ,Color(0xFFF74902) ];
+  if ( event == "Philadelphia Flyers" ) return [ Color(0xFFd33b00) ,Color(0xFFF74902) ];
   if ( event == "Pittsburgh Penguins" ) return [ Color(0xFFa3740e), Color(0xFFFCB514) ];
   if ( event == "San Jose Sharks" ) return [ Color(0xFF053138), Color(0xFF006D75) ];
   if ( event == "St Louis Blues" ) return [ Color(0xFF0047cc), Color(0xFF002F87) ];

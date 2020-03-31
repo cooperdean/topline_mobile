@@ -67,7 +67,7 @@ class _CategorySelectorState extends State<CategorySelector>{
               child: ListView( 
               children: [
                 Container( 
-                  padding: EdgeInsets.only( top:30, bottom:20 ),
+                  padding: EdgeInsets.only( top:40, bottom:20 ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children:[
@@ -80,13 +80,10 @@ class _CategorySelectorState extends State<CategorySelector>{
                           ]
                         ),
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Icon( Icons.update ),
-                            Center( child: Text( 
-                              "Updated at:",
-                              style: TextStyle( fontSize: 16, color: Colors.grey )
-                              ) 
-                            ),
+                            SizedBox( height:10 ),
                             Center( child: Text( 
                                 "${formatDate(widget.team.timestamp)}",
                                 style: TextStyle( fontSize: 16 )
@@ -97,117 +94,118 @@ class _CategorySelectorState extends State<CategorySelector>{
                       ],
                     )
                 ),
+                  SizedBox(height: 30),
                   if( selectedIndex==1 || selectedIndex==0 ) Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding( padding: EdgeInsets.only( top: 50 ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
-                      Center ( child: Container( child: Text( "LW",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
-                      Center ( child: Container( child: Text( "C",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 )  ) ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
-                      Center ( child: Container( child: Text( "RW",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
+                      Padding(padding: EdgeInsets.only(left:60)),
+                      Center ( child: Container( child: Text( "LW", style: TextStyle( fontSize: 23, fontStyle: FontStyle.italic ) ) ), ),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Center ( child: Container( child: Text( "C", style: TextStyle( fontSize: 23, fontStyle: FontStyle.italic )  ) ), ),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Center ( child: Container( child: Text( "RW", style: TextStyle( fontSize: 23, fontStyle: FontStyle.italic ) ) ), ),
+                      Padding(padding: EdgeInsets.only(right:60)),
                     ],
                   ),
                   if( selectedIndex==1 || selectedIndex==0 ) GridView.count(
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 1.3,
-                    padding: const EdgeInsets.only( left: 20, right: 20, top: 30),
+                    padding: EdgeInsets.only( left: 20, right: 20, top: 60, bottom: 20),
                     crossAxisSpacing: 10,
                     crossAxisCount: 3,
                     children: [
                       Center ( child: Column ( children: [
                             Container( child: Text( "LW1 - #${widget.team.l1lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l1lw[0]}",textAlign: TextAlign.center , ) )
+                            Container( child: Text( "${widget.team.l1lw[0]}", textAlign: TextAlign.center ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "C1 - #${widget.team.l1c[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l1c[0]}",textAlign: TextAlign.center , ) ) 
+                            Container( child: Text( "${widget.team.l1c[0]}", textAlign: TextAlign.center ) ) 
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "RW1 - #${widget.team.l1rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l1rw[0]}",textAlign: TextAlign.center , ) )
+                            Container( child: Text( "${widget.team.l1rw[0]}", textAlign: TextAlign.center ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "LW2 - #${widget.team.l2lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l2lw[0]}",textAlign: TextAlign.center , ) )
+                            Container( child: Text( "${widget.team.l2lw[0]}", textAlign: TextAlign.center,) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "C2 - #${widget.team.l2c[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l2c[0]}",textAlign: TextAlign.center , ) ) 
+                            Container( child: Text( "${widget.team.l2c[0]}", textAlign: TextAlign.center ) ) 
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "RW2 - #${widget.team.l2rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l2rw[0]}",textAlign: TextAlign.center , ) )
+                            Container( child: Text( "${widget.team.l2rw[0]}", textAlign: TextAlign.center ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "LW3 - #${widget.team.l3lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l3lw[0]}",textAlign: TextAlign.center , ) )
+                            Container( child: Text( "${widget.team.l3lw[0]}", textAlign: TextAlign.center ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "C3 - #${widget.team.l3c[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l3c[0]}",textAlign: TextAlign.center , ) ) 
+                            Container( child: Text( "${widget.team.l3c[0]}", textAlign: TextAlign.center ) ) 
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "RW3 - #${widget.team.l3rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l3rw[0]}",textAlign: TextAlign.center , ) )
+                            Container( child: Text( "${widget.team.l3rw[0]}", textAlign: TextAlign.center ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "LW4 - #${widget.team.l4lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l4lw[0]}",textAlign: TextAlign.center , ) )
+                            Container( child: Text( "${widget.team.l4lw[0]}", textAlign: TextAlign.center ) )
                           ] 
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "C4 - #${widget.team.l4c[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l4c[0]}",textAlign: TextAlign.center , ) ) 
+                            Container( child: Text( "${widget.team.l4c[0]}", textAlign: TextAlign.center ) ) 
                           ]
                         ), 
                       ),
                       Center ( child: Column ( children: [
                             Container( child: Text( "RW4 - #${widget.team.l4rw[1]}", style: TextStyle( color: Colors.grey ) ) ),
-                            Container( child: Text( "${widget.team.l4rw[0]}",textAlign: TextAlign.center , ) )
+                            Container( child: Text( "${widget.team.l4rw[0]}", textAlign: TextAlign.center ) )
                           ] 
                         ), 
                       ),
                     ],
                   ),
                   if( selectedIndex==2 || selectedIndex==0 ) Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding( padding: EdgeInsets.only( top:50 ),),
-                      Expanded( child: Divider( color: Colors.grey ) ),
-                      Center ( child: Container( child: Text( "LD",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
-                      Center ( child: Container( child: Text( "RD",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 )  ) ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
+                      Padding(padding: EdgeInsets.only(left:20)),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Center ( child: Container( child: Text( "LD", style: TextStyle( fontSize: 23, fontStyle: FontStyle.italic ) ) ), ),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Center ( child: Container( child: Text( "RD", style: TextStyle( fontSize: 23, fontStyle: FontStyle.italic ) ) ), ),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Padding(padding: EdgeInsets.only(right:20)),
                     ],
                   ),
                   if( selectedIndex==2 || selectedIndex==0 ) GridView.count(
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 2.2,
-                    padding: const EdgeInsets.only( left: 20, right: 20, top: 30 ),
+                    padding: EdgeInsets.only( left: 20, right: 20, top: 60, bottom: 20),
                     crossAxisSpacing: 5,
                     crossAxisCount: 2,
                     children: [
@@ -250,23 +248,20 @@ class _CategorySelectorState extends State<CategorySelector>{
                     ],
                   ),
                   if( selectedIndex==3 || selectedIndex==0 ) Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding( padding: EdgeInsets.only( top: 50 ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
-                      Center ( child: Container( child: Text( "Powerplay 1",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
+                      Padding(padding: EdgeInsets.only(left:20)),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Center ( child: Container( child: Text( "Powerplay    1", style: TextStyle( fontSize: 23, fontStyle: FontStyle.italic ) ) ), ),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Padding(padding: EdgeInsets.only(right:20)),
                     ],
                   ),
                   if( selectedIndex==3 || selectedIndex==0 ) GridView.count(
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 1.3,
-                    padding: const EdgeInsets.only( 
-                      left: 20,
-                      right: 20,
-                      top: 40
-                    ),
+                    padding: EdgeInsets.only( left: 20, right: 20, top: 60 ),
                     crossAxisSpacing: 10,
                     crossAxisCount: 3,
                     children: [
@@ -294,7 +289,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 3.5,
-                    padding: const EdgeInsets.symmetric( horizontal: 20 ),
+                    padding: const EdgeInsets.only( left: 20, right: 20, bottom: 50 ),
                     crossAxisSpacing: 0,
                     crossAxisCount: 2,
                     children: [
@@ -313,23 +308,20 @@ class _CategorySelectorState extends State<CategorySelector>{
                     ],
                   ),
                   if( selectedIndex==3 || selectedIndex==0 ) Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding( padding: EdgeInsets.only( top: 100 ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
-                      Center ( child: Container( child: Text( "Powerplay 2",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
+                      Padding(padding: EdgeInsets.only(left:20)),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Center ( child: Container( child: Text( "Powerplay    2", style: TextStyle( fontSize: 23, fontStyle: FontStyle.italic ) ) ), ),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Padding(padding: EdgeInsets.only(right:20)),
                     ],
                   ),
                   if( selectedIndex==3 || selectedIndex==0 ) GridView.count(
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 1.3,
-                    padding: const EdgeInsets.only( 
-                      left: 20,
-                      right: 20,
-                      top: 20
-                    ),
+                    padding: EdgeInsets.only( left: 20, right: 20, top: 60 ),
                     crossAxisSpacing: 10,
                     crossAxisCount: 3,
                     children: [
@@ -357,11 +349,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 3.5,
-                    padding: const EdgeInsets.only( 
-                      left: 20,
-                      right: 20,
-                      bottom: 20
-                    ),
+                    padding: EdgeInsets.only( left: 20, right: 20, bottom: 40 ),
                     crossAxisSpacing: 0,
                     crossAxisCount: 2,
                     children: [
@@ -380,12 +368,13 @@ class _CategorySelectorState extends State<CategorySelector>{
                     ],
                   ),
                   if( selectedIndex==4 || selectedIndex==0 ) Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding( padding: EdgeInsets.only( top: 50 ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
-                      Center ( child: Container( child: Text( "Goalies",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
+                      Padding(padding: EdgeInsets.only(left:20)),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Center ( child: Container( child: Text( "Goalies", style: TextStyle( fontSize: 23, fontStyle: FontStyle.italic ) ) ), ),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Padding(padding: EdgeInsets.only(right:20)),
                     ],                
                   ),
                   if( selectedIndex==4 || selectedIndex==0 ) GridView.count(
@@ -411,19 +400,20 @@ class _CategorySelectorState extends State<CategorySelector>{
                     ]
                   ),
                   if( selectedIndex==5 || selectedIndex==0 ) Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding( padding: EdgeInsets.only( top: 50 ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
-                      Center ( child: Container( child: Text( "Out",textAlign: TextAlign.center, style: TextStyle( fontSize: 20 ) ) ), ),
-                      Expanded( child: Divider( color: Colors.grey ) ),
+                      Padding(padding: EdgeInsets.only(left:20)),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Center ( child: Container( child: Text( "Out", style: TextStyle( fontSize: 23, fontStyle: FontStyle.italic ) ) ), ),
+                      Expanded(child: Container( child: Divider( color: Colors.grey ), margin: EdgeInsets.symmetric(horizontal: 20),)),
+                      Padding(padding: EdgeInsets.only(right:20)),
                     ],
                   ),
                   if( selectedIndex==5 || selectedIndex==0 ) GridView.count(
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     childAspectRatio: 3.5,
-                    padding: const EdgeInsets.all( 20 ),
+                    padding: EdgeInsets.only( left: 20, right: 20, top: 30, bottom: 40 ),
                     crossAxisSpacing: 5,
                     crossAxisCount: 2,
                     children: [

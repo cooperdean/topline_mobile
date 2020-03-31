@@ -12,37 +12,50 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final List<Widget> _children = [
-    LinesTab(),
-    LineUpdatesTab(),
-  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        leading: Padding(
-          padding: const EdgeInsets.only(
-            top: 20,
-            left: 20
-          ),
-          child: GestureDetector(
-            onTap: () { Navigator.push( context, MaterialPageRoute(builder: (context) => HelpPage() ) ); },
-            child: FaIcon( FontAwesomeIcons.solidQuestionCircle )
+    return Stack(
+          children: [
+
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [ Color(0xFF202744), Color(0xFF131729) ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter
+                )
+              ),
             ),
-        ),
-        title: Text( "TopSix", 
-          style: TextStyle( 
-            color: Colors.white, 
-            fontFamily: "Chivo", 
-            fontStyle: FontStyle.italic,
-            fontSize: 40
-          ) 
-        ),
-        backgroundColor: Colors.grey[900],
-        elevation: 0,
-      ),
-      body: LinesTab()
+
+            Scaffold(
+              backgroundColor: Colors.transparent,
+              appBar: AppBar(
+                centerTitle: true,
+                leading: Padding(
+                  padding: const EdgeInsets.only(
+                    top: 20,
+                    left: 20
+                  ),
+                  child: GestureDetector(
+                    onTap: () { Navigator.push( context, MaterialPageRoute(builder: (context) => HelpPage() ) ); },
+                    child: FaIcon( FontAwesomeIcons.solidQuestionCircle )
+                    ),
+                ),
+                title: Text( "TopSix", 
+                  style: TextStyle( 
+                    color: Colors.white, 
+                    fontFamily: "Chivo", 
+                    fontStyle: FontStyle.italic,
+                    fontSize: 40
+                  ) 
+                ),
+                elevation: 0,
+                backgroundColor: Colors.transparent,
+              ),
+              body: LinesTab()
+            ),
+          ]
     );
   }
 

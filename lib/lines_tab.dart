@@ -53,7 +53,7 @@ class _LinesState extends State<LinesTab> {
     int selectedIndex = 0;
 
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.transparent,
       body: Column(
         children: [         
             Container(
