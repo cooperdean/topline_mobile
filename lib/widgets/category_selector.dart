@@ -10,7 +10,7 @@ class CategorySelector extends StatefulWidget {
 }
 class _CategorySelectorState extends State<CategorySelector>{
 
-  final List<String> lineCats = ['Team Lineup', 'Forwards', 'Defense', 'Powerplay', 'Goalies', 'Injured'];
+  final List<String> lineCats = ['Team Lineup', 'Schedule', 'Statistics'];
   int selectedIndex = 0;
 
   @override

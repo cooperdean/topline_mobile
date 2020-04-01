@@ -42,7 +42,8 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(80),
+                                  topRight: Radius.circular(60),
+                                  topLeft: Radius.circular(60),
                                 )
                               ),
                               height: 200,
@@ -57,7 +58,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                       child: ClipRRect(
                               borderRadius: BorderRadius.only(
                                       topRight: Radius.circular(60),
-                                      topLeft: Radius.circular(60)
+                                      topLeft: Radius.circular(60),
                                     ),
                               child: Container(
                                 decoration: BoxDecoration(

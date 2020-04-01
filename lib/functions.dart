@@ -93,9 +93,45 @@ List getTeamColor(String event) {
   if ( event == "St Louis Blues" ) return [ Color(0xFF0047cc), Color(0xFF002F87) ];
   if ( event == "Tampa Bay Lightning" ) return [ Color(0xFF003da0), Color(0xFF002868) ];
   if ( event == "Toronto Maple Leafs" ) return [ Color(0xFF003599), Color(0xFF00205B) ];
-  if ( event == "Vancouver Canucks" ) return [ Color(0xFF003496), Color(0xFF00205B) ];
+  if ( event == "Vancouver Canucks" ) return [ Color(0xFF00205B), Color(0xFF003496) ];
   if ( event == "Vegas Golden Knights" ) return [ Color(0xFF191f21), Color(0xFF333f42) ];
   if ( event == "Washington Capitals" ) return [ Color(0xFF750a1a), Color(0xFFC8102E) ];
-  if ( event == "Winnipeg Jets" ) return [ Color(0xFF08336b), Color(0xFF041E42) ];
+  if ( event == "Winnipeg Jets" ) return [ Color(0xFF041E42), Color(0xFF08336b) ];
   return [ Colors.black, Colors.white ];
+}
+
+String getTeamAbv(String teamName) {
+
+  if ( teamName == "Anaheim Ducks" ) return "ANA";
+  if ( teamName == "Arizona Coyotes" ) return "ARI";
+  if ( teamName == "Boston Bruins" ) return "BOS";
+  if ( teamName == "Buffalo Sabres" ) return "BUF";
+  if ( teamName == "Calgary Flames" ) return "CGY";
+  if ( teamName == "Carolina Hurricanes" ) return "CAR";
+  if ( teamName == "Chicago Blackhawks" ) return "CHI";
+  if ( teamName == "Colorado Avalanche" ) return "COL";
+  if ( teamName == "Columbus Blue Jackets" ) return "CBJ";
+  if ( teamName == "Dallas Stars" ) return "DAL";
+  if ( teamName == "Detroit Red Wings" ) return "DET";
+  if ( teamName == "Edmonton Oilers" ) return "EDM";
+  if ( teamName == "Florida Panthers" ) return "FLA";
+  if ( teamName == "Los Angeles Kings" ) return "LA";
+  if ( teamName == "Minnesota Wild" ) return "MIN";
+  if ( teamName == "Montreal Canadiens" ) return "MON";
+  if ( teamName == "Nashville Predators" ) return "NSH";
+  if ( teamName == "New Jersey Devils" ) return "NJD";
+  if ( teamName == "New York Islanders" ) return "NYI";
+  if ( teamName == "New York Rangers" ) return "NYR";
+  if ( teamName == "Ottawa Senators" ) return "OTT";
+  if ( teamName == "Philadelphia Flyers" ) return "PHI";
+  if ( teamName == "Pittsburgh Penguins" ) return "PIT";
+  if ( teamName == "San Jose Sharks" ) return "SJS";
+  if ( teamName == "St Louis Blues" ) return "STL";
+  if ( teamName == "Tampa Bay Lightning" ) return "TB";
+  if ( teamName == "Toronto Maple Leafs" ) return "TOR";
+  if ( teamName == "Vancouver Canucks" ) return "VAN";
+  if ( teamName == "Vegas Golden Knights" ) return "VEG";
+  if ( teamName == "Washington Capitals" ) return "WSH";
+  if ( teamName == "Winnipeg Jets" ) return "WIN";
+  return "ABV";
 }

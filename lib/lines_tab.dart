@@ -49,7 +49,7 @@ class _LinesState extends State<LinesTab> {
   @override
   Widget build(BuildContext context) {
 
-    final List<String> pageCats = ['Projected Lineups'];
+    final List<String> pageCats = ['Rosters & Schedules'];
     int selectedIndex = 0;
 
     return Scaffold(
@@ -101,10 +101,7 @@ class _LinesState extends State<LinesTab> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: ( 
-                    BorderRadius.only( 
-                      topLeft: Radius.circular(60),
-                      bottomLeft: Radius.circular(60),                              
-                     ) 
+                    BorderRadius.all( Radius.circular(60) ) 
                   )
                 ),
                 height: 210,
@@ -115,10 +112,7 @@ class _LinesState extends State<LinesTab> {
 
             } else {
               return ClipRRect(
-                    borderRadius: BorderRadius.only( 
-                      topLeft: Radius.circular(60),
-                      bottomLeft: Radius.circular(60),
-                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(60)),
                     child: Column(
                         children: [ 
                           Container(
@@ -127,12 +121,11 @@ class _LinesState extends State<LinesTab> {
                             color: Colors.white,
                           ),
                           child: GridView.builder(
-                              padding: EdgeInsets.only( left:8.0 ),
-                              scrollDirection: Axis.horizontal,
+                              padding: EdgeInsets.all( 8.0 ),
                               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3,
+                                crossAxisCount: 5,
                                 crossAxisSpacing: 0,
-                                mainAxisSpacing: 0,
+                                mainAxisSpacing: 6,
                               ),
                               itemCount : snapshot.data.length,
                               itemBuilder: ( BuildContext context, int index){
@@ -141,7 +134,6 @@ class _LinesState extends State<LinesTab> {
                                   top: 13,
                                   left: 13,
                                   right: 13,
-                                  bottom: 13,
                                 ),
                                 decoration: BoxDecoration( 
                                   color: Colors.white,
@@ -234,7 +226,7 @@ class TeamLine {
   final List pp2rd;
   final List g1;
   final List g2;
-
+  
   TeamLine( 
 
     this.team,
@@ -269,8 +261,32 @@ class TeamLine {
     this.pp2ld,
     this.pp2rd,
     this.g1,
-    this.g2
+    this.g2,
 
    );
+
+}
+
+class TeamSchedule {
+
+  final String gameNumber;
+  final String date;
+  final String homeAway;
+  final String opponent;
+  final String goalsFor;
+  final String goalsAgainst;
+  final String result;
+  final String overtime;
+
+  TeamSchedule(
+    this.gameNumber,
+    this.date,
+    this.homeAway,
+    this.opponent,
+    this.goalsFor,
+    this.goalsAgainst,
+    this.result,
+    this.overtime
+  );
 
 }

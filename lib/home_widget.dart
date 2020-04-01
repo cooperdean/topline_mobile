@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:topline/widgets/help_page.dart';
-import 'line_updates.dart';
 import 'lines_tab.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,9 +20,9 @@ class _HomeState extends State<Home> {
             Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [ Color(0xFF202744), Color(0xFF131729) ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter
+                  colors: [ Color(0xFF131729), Color(0xFF2b345e) ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight
                 )
               ),
             ),
@@ -39,7 +38,7 @@ class _HomeState extends State<Home> {
                   ),
                   child: GestureDetector(
                     onTap: () { Navigator.push( context, MaterialPageRoute(builder: (context) => HelpPage() ) ); },
-                    child: FaIcon( FontAwesomeIcons.solidQuestionCircle )
+                    child: FaIcon( FontAwesomeIcons.solidQuestionCircle, color: Colors.white )
                     ),
                 ),
                 title: Text( "TopSix", 
