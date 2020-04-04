@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:topline/widgets/help_page.dart';
-import 'lines_tab.dart';
+import 'package:topline/widgets/homepage_selector.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
@@ -20,9 +20,9 @@ class _HomeState extends State<Home> {
             Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [ Color(0xFF131729), Color(0xFF2b345e) ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight
+              colors: [ Color(0xFF202744), Color(0xFF131729) ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter
                 )
               ),
             ),
@@ -46,13 +46,13 @@ class _HomeState extends State<Home> {
                     color: Colors.white, 
                     fontFamily: "Chivo", 
                     fontStyle: FontStyle.italic,
-                    fontSize: 40
+                    fontSize: 30
                   ) 
                 ),
                 elevation: 0,
                 backgroundColor: Colors.transparent,
               ),
-              body: LinesTab()
+              body: HomePageSelector()
             ),
           ]
     );

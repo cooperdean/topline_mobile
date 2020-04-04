@@ -1,9 +1,10 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 
 String formatDate(String timestamp) {
   DateTime now = DateTime.parse(timestamp);
-  DateTime converted = now.toUtc(); 
+  DateTime converted = now.toLocal(); 
   return DateFormat('h:mm a - MM/dd').format(converted);
 }
 
@@ -30,7 +31,6 @@ String formatDateOnlyDate(String timestamp) {
 }
 
 String getTeamLogo( String teamName ){
-
   if ( teamName == "Anaheim Ducks" || teamName == "ANA" ) return "3675" ;
   if ( teamName == "Arizona Coyotes" || teamName == "ARI" ) return "3698" ;
   if ( teamName == "Boston Bruins" || teamName == "BOS" ) return "3677" ;
@@ -74,13 +74,13 @@ List getTeamColor(String event) {
   if ( event == "Carolina Hurricanes" ) return [ Color(0xFF870202), Color(0xFFCC0000) ];
   if ( event == "Chicago Blackhawks" ) return [ Color(0xFF750e1f), Color(0xFFCF0A2C) ];
   if ( event == "Colorado Avalanche" ) return [ Color(0xFF491224), Color(0xFF6F263D) ];
-  if ( event == "Columbus Blue Jackets" ) return [ Color(0xFF003b84), Color(0xFF002654) ];
+  if ( event == "Columbus Blue Jackets" ) return [ Color(0xFF001938), Color(0xFF002654) ];
   if ( event == "Dallas Stars" ) return [ Color(0xFF013825), Color(0xFF006847) ];
   if ( event == "Detroit Red Wings" ) return [ Color(0xFFf4182e), Color(0xFFCE1126) ];
-  if ( event == "Edmonton Oilers" ) return [ Color(0xFF083066), Color(0xFF041E42) ];
+  if ( event == "Edmonton Oilers" ) return [ Color(0xFF001126), Color(0xFF041E42) ];
   if ( event == "Florida Panthers" ) return [ Color(0xFF700d1c), Color(0xFFC8102E) ];
   if ( event == "Los Angeles Kings" ) return [ Color(0xFF383838), Color(0xFF828689) ];
-  if ( event == "Minnesota Wild" ) return [ Color(0xFF071c14), Color(0xFF154734) ];
+  if ( event == "Minnesota Wild" ) return [ Color(0xFF0b261b), Color(0xFF154734) ];
   if ( event == "Montreal Canadiens" ) return [ Color(0xFFcc2435), Color(0xFFAF1E2D) ];
   if ( event == "Nashville Predators" ) return [ Color(0xFF08336b), Color(0xFF041E42) ];
   if ( event == "New Jersey Devils" ) return [ Color(0xFF870202), Color(0xFFCE1126) ];
@@ -100,8 +100,42 @@ List getTeamColor(String event) {
   return [ Colors.black, Colors.white ];
 }
 
-String getTeamAbv(String teamName) {
+Color getAccentColor(String teamName) {
+  if ( teamName == "Anaheim Ducks" ) return Color(0xFFF47A38);
+  if ( teamName == "Arizona Coyotes" ) return Color(0xFFE2D6B5);
+  if ( teamName == "Boston Bruins" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Buffalo Sabres" ) return Color(0xFFFCB514);
+  if ( teamName == "Calgary Flames" ) return Color(0xFFF1BE48);
+  if ( teamName == "Carolina Hurricanes" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Chicago Blackhawks" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Colorado Avalanche" ) return Color(0xFF236192);
+  if ( teamName == "Columbus Blue Jackets" ) return Color(0xFFCE1126);
+  if ( teamName == "Dallas Stars" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Detroit Red Wings" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Edmonton Oilers" ) return Color(0xFFFF4C00);
+  if ( teamName == "Florida Panthers" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Los Angeles Kings" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Minnesota Wild" ) return Color(0xFFDDCBA4);
+  if ( teamName == "Montreal Canadiens" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Nashville Predators" ) return Color(0xFFFFB81C);
+  if ( teamName == "New Jersey Devils" ) return Color(0xFFFFFFFF);
+  if ( teamName == "New York Islanders" ) return Color(0xFFF47D30);
+  if ( teamName == "New York Rangers" ) return Color(0xFFCE1126);
+  if ( teamName == "Ottawa Senators" ) return Color(0xFFC2912C);
+  if ( teamName == "Philadelphia Flyers" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Pittsburgh Penguins" ) return Color(0xFFFFFFFF);
+  if ( teamName == "San Jose Sharks" ) return Color(0xFFEA7200);
+  if ( teamName == "St Louis Blues" ) return Color(0xFFFCB514);
+  if ( teamName == "Tampa Bay Lightning" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Toronto Maple Leafs" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Vancouver Canucks" ) return Color(0xFF00843D);
+  if ( teamName == "Vegas Golden Knights" ) return Color(0xFFB4975A);
+  if ( teamName == "Washington Capitals" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Winnipeg Jets" ) return Color(0xFF004C97);
+  return Colors.black;
+}
 
+String getTeamAbv(String teamName) {
   if ( teamName == "Anaheim Ducks" ) return "ANA";
   if ( teamName == "Arizona Coyotes" ) return "ARI";
   if ( teamName == "Boston Bruins" ) return "BOS";
@@ -135,3 +169,11 @@ String getTeamAbv(String teamName) {
   if ( teamName == "Winnipeg Jets" ) return "WIN";
   return "ABV";
 }
+
+FaIcon getPromoIcon( String promoString ) {
+  if( promoString == 'yes' ) return FaIcon( FontAwesomeIcons.sortUp, color: Colors.greenAccent, );
+  if( promoString == 'no' ) return FaIcon( FontAwesomeIcons.sortDown, color: Color(0xFFc8102e) );
+  return FaIcon( FontAwesomeIcons.minus, color: Colors.transparent, size:12 );  
+}
+
+

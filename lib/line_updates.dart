@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:topline/paturls.dart';
@@ -20,7 +21,7 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
 
     List<LineUpdate> lineupdates = [];
     for(var l in jsonData){
-        LineUpdate lineupdate = LineUpdate( l["team"], l["player"], l["moved_to"], l["timeStamp"] );
+        LineUpdate lineupdate = LineUpdate( l["team"], l["player"], l["moved_to"], l["timeStamp"], l['promo'] );
         lineupdates.add(lineupdate);
       }
     return lineupdates;
@@ -38,20 +39,12 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                   if(snapshot.data == null){
 
                     return Expanded(
-                            child: Container( 
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(60),
-                                  topLeft: Radius.circular(60),
-                                )
-                              ),
-                              height: 200,
-                              child: Center( 
-                                child: CircularProgressIndicator()
-                              )
-                            ),
-                          );
+                        child: Container( 
+                          child: Center( 
+                            child: CircularProgressIndicator()
+                          )
+                        ),
+                      );
 
                   } else {
                     return Expanded(
@@ -69,22 +62,26 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                                   )
                                 ),
                               child: ListView.builder( 
+                              padding: EdgeInsets.only(top:10),
                               itemCount : snapshot.data.length,
                               itemBuilder: (BuildContext context, int index){
-                              if( int.tryParse( snapshot.data[index].moved_to.split(" ")[1] ) < 3 ){  
-                                  return Container( 
-                                            child: Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal:8.0),
-                                              child: Card( 
-                                                  child: ListTile( 
-                                                    leading: Image.network("https://sportteamslogo.com/api?key="+logoKey+"&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}")),
-                                                    title: Text( snapshot.data[index].player+" to "+snapshot.data[index].moved_to ),
-                                                    subtitle: Text( formatDate( snapshot.data[index].timeStamp ) ),
-                                                    trailing: Icon( Icons.arrow_right ),
-                                                  ) 
-                                                ),
-                                            )
-                                      );
+                              if( int.tryParse( snapshot.data[index].movedTo.split(" ")[1] ) < 3 ){  
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal:20.0),
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          bottom: BorderSide(color:Colors.grey[200], width:1.0)
+                                        )
+                                      ),
+                                      child: ListTile( 
+                                        leading: Image.network("https://sportteamslogo.com/api?key="+logoKey+"&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}")),
+                                        title: Text( snapshot.data[index].player+" to "+snapshot.data[index].movedTo ),
+                                        subtitle: Text( formatDate( snapshot.data[index].timeStamp ) ),
+                                        trailing:  getPromoIcon( snapshot.data[index].promo )
+                                      ),
+                                    ),
+                                  );
                                   } else {
                                       return Container( height: 0, width: 0 );
                                   }
@@ -104,12 +101,14 @@ class LineUpdate {
 
   final String team;
   final String player;
-  final String moved_to;
+  final String movedTo;
   final String timeStamp;
+  final String promo;
 
   LineUpdate( this.team, 
               this.player, 
-              this.moved_to, 
-              this.timeStamp );
+              this.movedTo, 
+              this.timeStamp,
+              this.promo );
 
 }

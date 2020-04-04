@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:topline/classes/team_rosters.dart';
 import '../functions.dart';
-import '../lines_tab.dart';
 
 class CategorySelector extends StatefulWidget {
   final TeamLine team;
@@ -10,46 +10,62 @@ class CategorySelector extends StatefulWidget {
 }
 class _CategorySelectorState extends State<CategorySelector>{
 
-  final List<String> lineCats = ['Team Lineup', 'Schedule', 'Statistics'];
+  final List<String> lineCats = ['Team Lineup', 'Schedule', 'Last 10'];
   int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) { 
     return Column(
       children: [ 
-
         Container(
-          height: 60,
-          color: Colors.transparent,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: lineCats.length,
-            itemBuilder: (BuildContext context, int index) {
-              return GestureDetector(
-                onTap: () {
-                  setState( () {
-                    selectedIndex = index;
-                  });
-                },
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.0,
-                    vertical: 14.0
-                  ),
-                  child: Text(
-                    lineCats[index],
-                    style: TextStyle(
-                      color: index == selectedIndex ? Colors.white : Colors.white54,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2
+            height: 60,
+            color: Colors.transparent,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: lineCats.length,
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: () {
+                    setState( () {
+                      selectedIndex = index;
+                    });
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                      vertical: 10.0
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          lineCats[index],
+                          style: TextStyle(
+                            fontStyle: index == selectedIndex ? FontStyle.italic : FontStyle.normal,
+                            color: index == selectedIndex ? Colors.white : Colors.white38,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 2
+                          )
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top:4.0),
+                          child: Container(
+                            width: 80,
+                            height: 1,
+                            decoration: BoxDecoration(
+                              color: index == selectedIndex ? getAccentColor(widget.team.team) : Colors.transparent,
+                              borderRadius: BorderRadius.all(Radius.circular(4))
+                            ),
+                          ),
+                        )
+                      ],
                     )
-                  )
-                ),
-              );
-            }
-          )
-        ),
+                  ),
+                );
+              }
+            )
+          ),
       Expanded(
         child: Container(
           decoration: BoxDecoration(
@@ -74,21 +90,17 @@ class _CategorySelectorState extends State<CategorySelector>{
                         Column(
                           children: [ 
                               Image.network( 
-                                "https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=big&tid="+getTeamLogo("${widget.team.team}"),
+                                "https://sportteamslogo.com/api?key=30fa25df759b495f8995bfb7dac527f9&size=big&tid="+getTeamLogo(widget.team.team),
                                 scale: 1.6,
-                            ) 
+                              ),
                           ]
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Icon( Icons.update ),
-                            SizedBox( height:10 ),
-                            Center( child: Text( 
-                                "${formatDate(widget.team.timestamp)}",
-                                style: TextStyle( fontSize: 16 )
-                              ) 
-                            ) 
+                            Text("Updated:"),
+                            Text( "${formatDate(widget.team.timestamp)}" ) 
                           ]
                         ),
                       ],
@@ -417,7 +429,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                     crossAxisSpacing: 5,
                     crossAxisCount: 2,
                     children: [
-                      for (var ir in widget.team.ir) Center( child: Text( "${ir}" ) )
+                      for (var ir in widget.team.ir) Center( child: Text( ir ) )
                     ],
                   ),
                 ]

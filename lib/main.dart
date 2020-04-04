@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'home_widget.dart';
-import 'package:flutter/rendering.dart';
-
 
 void main() => runApp(App());
 
@@ -14,7 +12,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.dark,
       theme: ThemeData(
         primaryColor: Colors.grey[900],
-        accentColor: Colors.black 
+        accentColor: Colors.white
       ),
       title: "TopSix",
       home: Home(),

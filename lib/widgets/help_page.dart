@@ -37,7 +37,7 @@ class HelpPage extends StatelessWidget {
                 padding: const EdgeInsets.only( top:20, left:20, bottom: 20 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
+                  children: [
                     Text( "Contact", 
                       style:( TextStyle(
                           color: Colors.white,               
@@ -65,7 +65,7 @@ class HelpPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    child: FaIcon( FontAwesomeIcons.solidAddressCard, color: Colors.white, size: 85, )
+                    child: FaIcon( FontAwesomeIcons.solidAddressCard, color: Colors.white, size: 55, )
                   ),
                   Container(
                     padding: EdgeInsets.symmetric( vertical:20 ),
@@ -73,7 +73,8 @@ class HelpPage extends StatelessWidget {
                       "Cooper Dean\ngithub.com/cooperdean\ninfo@topsix.com",
                       style: TextStyle( 
                         color: Colors.white,
-                        fontSize: 17,
+                        fontSize: 18,
+                        fontStyle: FontStyle.italic
                       )
                     )
                   ),
@@ -100,7 +101,7 @@ class HelpPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    child: FaIcon( FontAwesomeIcons.exclamationCircle, color: Colors.white, size: 65, )
+                    child: FaIcon( FontAwesomeIcons.exclamationCircle, color: Colors.white, size: 45, )
                   ),
                   Container(
                     padding: EdgeInsets.symmetric( vertical:20 ),
@@ -109,6 +110,7 @@ class HelpPage extends StatelessWidget {
                       style: TextStyle( 
                         color: Colors.white,
                         fontSize: 17,
+                        fontStyle: FontStyle.italic
                       )
                     )
                   ),

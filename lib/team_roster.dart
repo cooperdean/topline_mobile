@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:topline/widgets/category_selector.dart';
-import 'lines_tab.dart';
+import 'classes/team_rosters.dart';
 import 'functions.dart';
 
 class TeamRoster extends StatelessWidget {
