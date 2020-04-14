@@ -68,7 +68,7 @@ String getTeamLogo( String teamName ){
 List getTeamColor(String event) {
   if ( event == "Anaheim Ducks" ) return [ Color(0xFF7f663a), Color(0xFFB5995A) ];
   if ( event == "Arizona Coyotes" ) return [ Color(0xFF5b101a), Color(0xFF8C2633) ];
-  if ( event == "Boston Bruins" ) return [ Color(0xFFb57c03), Color(0xFFFFB81C) ];
+  if ( event == "Boston Bruins" ) return [ Color(0xFF000000), Color(0xFF191f21) ];
   if ( event == "Buffalo Sabres" ) return [ Color(0xFF08336b), Color(0xFF002654) ];
   if ( event == "Calgary Flames" ) return [ Color(0xFF840d1f), Color(0xFFC8102E) ];
   if ( event == "Carolina Hurricanes" ) return [ Color(0xFF870202), Color(0xFFCC0000) ];
@@ -103,12 +103,12 @@ List getTeamColor(String event) {
 Color getAccentColor(String teamName) {
   if ( teamName == "Anaheim Ducks" ) return Color(0xFFF47A38);
   if ( teamName == "Arizona Coyotes" ) return Color(0xFFE2D6B5);
-  if ( teamName == "Boston Bruins" ) return Color(0xFFFFFFFF);
+  if ( teamName == "Boston Bruins" ) return Color(0xFFFFB81C);
   if ( teamName == "Buffalo Sabres" ) return Color(0xFFFCB514);
   if ( teamName == "Calgary Flames" ) return Color(0xFFF1BE48);
   if ( teamName == "Carolina Hurricanes" ) return Color(0xFFFFFFFF);
   if ( teamName == "Chicago Blackhawks" ) return Color(0xFFFFFFFF);
-  if ( teamName == "Colorado Avalanche" ) return Color(0xFF236192);
+  if ( teamName == "Colorado Avalanche" ) return Color(0xFFFFFFFF);
   if ( teamName == "Columbus Blue Jackets" ) return Color(0xFFCE1126);
   if ( teamName == "Dallas Stars" ) return Color(0xFFFFFFFF);
   if ( teamName == "Detroit Red Wings" ) return Color(0xFFFFFFFF);

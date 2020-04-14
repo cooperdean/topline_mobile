@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:topline/paturls.dart';
@@ -75,7 +74,10 @@ class _LineUpdatesState extends State<LineUpdatesTab> {
                                         )
                                       ),
                                       child: ListTile( 
-                                        leading: Image.network("https://sportteamslogo.com/api?key="+logoKey+"&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}")),
+                                        leading: Container(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Image.network("https://sportteamslogo.com/api?key="+logoKey+"&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}"))
+                                                ),
                                         title: Text( snapshot.data[index].player+" to "+snapshot.data[index].movedTo ),
                                         subtitle: Text( formatDate( snapshot.data[index].timeStamp ) ),
                                         trailing:  getPromoIcon( snapshot.data[index].promo )

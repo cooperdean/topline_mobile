@@ -11,7 +11,7 @@ class HomePageSelector extends StatefulWidget {
 
 class _HomePageSelectorState extends State<HomePageSelector> {
 
-  final List<String> pageCats = ['Rosters & Gamelogs', 'League Standings','Line Updates'];
+  final List<String> pageCats = ['Rosters & Gamelogs', 'Line Updates', 'League Standings'];
   int selectedIndex = 0;
 
   @override
@@ -46,9 +46,9 @@ class _HomePageSelectorState extends State<HomePageSelector> {
                             Text(
                               pageCats[index],
                               style: TextStyle(
-                                fontStyle: index == selectedIndex ? FontStyle.italic : FontStyle.normal,
+                                fontStyle: FontStyle.italic,
                                 color: index == selectedIndex ? Colors.white : Colors.white38,
-                                fontSize: 19.5,
+                                fontSize: 18.5,
                                 fontWeight: FontWeight.bold,
                                 letterSpacing: 2
                               )
@@ -72,8 +72,8 @@ class _HomePageSelectorState extends State<HomePageSelector> {
                 )
               ),
               if( selectedIndex == 0 ) LinesTab(),
-              if( selectedIndex == 1 ) LeagueStandings(),
-              if( selectedIndex == 2 ) LineUpdatesTab()
+              if( selectedIndex == 1 ) LineUpdatesTab(),
+              if( selectedIndex == 2 ) LeagueStandings(),
             ],
           ),
         ),

@@ -79,17 +79,21 @@ class _LeagueStandingsState extends State<LeagueStandings> {
                     )
                   ),
                   child: ListView.builder(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(10),
                       itemCount: snapshot.data.length,
                       itemBuilder: (BuildContext context, int index){
                         if( index==0 ) {
                           return Column(
                             children: [
                               Container(
-                                padding: EdgeInsets.only( top:10, bottom:30 ),
+                                padding: EdgeInsets.only( top:20, bottom:30 ),
                                 child: Text("Eastern Conference", style: TextStyle( fontSize: 20, fontWeight: FontWeight.bold ) ),
                               ),
                               Container(
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  border: Border( bottom: BorderSide( color: Colors.grey[200], width: 1 ) )
+                                ),
                                 child: Row (
                                   children: [ 
                                     Container(
@@ -142,7 +146,7 @@ class _LeagueStandingsState extends State<LeagueStandings> {
                                     ),
                                     Expanded(
                                       flex: 1,
-                                      child: Text( getTeamAbv( snapshot.data[index].team ) )
+                                      child: Text( getTeamAbv( snapshot.data[index].team ), style: TextStyle( fontWeight: FontWeight.bold ) )
                                     ),
                                     Expanded(
                                       flex: 1,
@@ -180,10 +184,14 @@ class _LeagueStandingsState extends State<LeagueStandings> {
                           return Column(
                             children: [
                               Container(
-                                padding: EdgeInsets.only( top:35, bottom:30 ),
+                                padding: EdgeInsets.symmetric( vertical:40 ),
                                 child: Text("Western Conference", style: TextStyle( fontSize: 20, fontWeight: FontWeight.bold ) ),
                               ),
                               Container(
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  border: Border( bottom: BorderSide( color: Colors.grey[200], width: 1 ) )
+                                ),
                                 child: Row (
                                   children: [ 
                                     Container(
@@ -229,14 +237,14 @@ class _LeagueStandingsState extends State<LeagueStandings> {
                                   border: index != 30 ? Border( bottom: BorderSide( color: Colors.grey[200], width: 1 ) ) : Border()
                                 ),
                                 child: Row (
-                                  children: [ 
+                                  children: [
                                     Container(
                                       padding: EdgeInsets.all(14.0),
                                       child: Image.network("https://sportteamslogo.com/api?key="+logoKey+"&size=medium&tid="+getTeamLogo("${snapshot.data[index].team}"))
                                     ),
                                     Expanded(
                                       flex: 1,
-                                      child: Text( getTeamAbv( snapshot.data[index].team ) )
+                                      child: Text( getTeamAbv( snapshot.data[index].team ), style: TextStyle( fontWeight: FontWeight.bold ) )
                                     ),
                                     Expanded(
                                       flex: 1,
@@ -283,7 +291,7 @@ class _LeagueStandingsState extends State<LeagueStandings> {
                               ),
                               Expanded(
                                 flex: 1,
-                                child: Text( getTeamAbv( snapshot.data[index].team ) )
+                                child: Text( getTeamAbv( snapshot.data[index].team ), style: TextStyle( fontWeight: FontWeight.bold ) )
                               ),
                               Expanded(
                                 flex: 1,

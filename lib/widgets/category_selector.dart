@@ -41,9 +41,9 @@ class _CategorySelectorState extends State<CategorySelector>{
                         Text(
                           lineCats[index],
                           style: TextStyle(
-                            fontStyle: index == selectedIndex ? FontStyle.italic : FontStyle.normal,
+                            fontStyle: FontStyle.italic,
                             color: index == selectedIndex ? Colors.white : Colors.white38,
-                            fontSize: 20.0,
+                            fontSize: 18.5,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 2
                           )
@@ -52,7 +52,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                           padding: EdgeInsets.only(top:4.0),
                           child: Container(
                             width: 80,
-                            height: 1,
+                            height: 2,
                             decoration: BoxDecoration(
                               color: index == selectedIndex ? getAccentColor(widget.team.team) : Colors.transparent,
                               borderRadius: BorderRadius.all(Radius.circular(4))

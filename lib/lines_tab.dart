@@ -88,10 +88,10 @@ class _LinesState extends State<LinesTab> {
                         ),
                         child: ListTile(
                           leading: Container(
-                            padding: EdgeInsets.all(5),
+                            padding: EdgeInsets.all(8.0),
                             child: Image.network( "https://sportteamslogo.com/api?key="+logoKey+"&size=medium&tid="+getTeamLogo(snapshot.data[index].team))
                           ),
-                          title: Text( snapshot.data[index].team, style: TextStyle( fontSize: 18 ) ),
+                          title: Text( snapshot.data[index].team, style: TextStyle( fontSize: 16 ) ),
                           subtitle: Text( snapshot.data[index].record ),
                         ),
                       ),
