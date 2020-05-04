@@ -10,7 +10,7 @@ class CategorySelector extends StatefulWidget {
 }
 class _CategorySelectorState extends State<CategorySelector>{
 
-  final List<String> lineCats = ['Team Lineup', 'Schedule', 'Last 10'];
+  final List<String> lineCats = ['Lineup', 'Schedule', 'Last 10'];
   int selectedIndex = 0;
 
   @override
@@ -32,34 +32,35 @@ class _CategorySelectorState extends State<CategorySelector>{
                   },
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 20.0,
                       vertical: 10.0
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          lineCats[index],
-                          style: TextStyle(
-                            fontStyle: FontStyle.italic,
-                            color: index == selectedIndex ? Colors.white : Colors.white38,
-                            fontSize: 18.5,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 2
-                          )
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top:4.0),
-                          child: Container(
-                            width: 80,
-                            height: 2,
-                            decoration: BoxDecoration(
-                              color: index == selectedIndex ? getAccentColor(widget.team.team) : Colors.transparent,
-                              borderRadius: BorderRadius.all(Radius.circular(4))
-                            ),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.33,
+                      child: Column(
+                        children: [
+                          Text(
+                            lineCats[index],
+                            style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                              color: index == selectedIndex ? Colors.white : Colors.white24,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2
+                            )
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: EdgeInsets.only(top:4.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.02,
+                              height: 3,
+                              decoration: BoxDecoration(
+                                color: index == selectedIndex ? getAccentColor(widget.team.team) : Colors.transparent,
+                                borderRadius: BorderRadius.all(Radius.circular(4))
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     )
                   ),
                 );
@@ -130,6 +131,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                       Center ( child: Column ( children: [
                             Container( child: Text( "LW1 - #${widget.team.l1lw[1]}", style: TextStyle( color: Colors.grey ) ) ),
                             Container( child: Text( "${widget.team.l1lw[0]}", textAlign: TextAlign.center ) )
+                          
                           ] 
                         ), 
                       ),
@@ -434,7 +436,7 @@ class _CategorySelectorState extends State<CategorySelector>{
                   ),
                 ]
               ),
-          ),
+            ),
           ),
         ),
       ]

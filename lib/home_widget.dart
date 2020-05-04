@@ -11,53 +11,40 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   @override
   Widget build(BuildContext context) {
-    return Stack(
-          children: [
-
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-              colors: [ Color(0xFF202744), Color(0xFF131729) ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter
-                )
-              ),
+    return Stack(children: [
+      Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Color(0xFF202744), Color(0xFF131729)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter)),
+      ),
+      Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            centerTitle: true,
+            leading: Padding(
+              padding: const EdgeInsets.only(top: 20, left: 20),
+              child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HelpPage()));
+                  },
+                  child: FaIcon(FontAwesomeIcons.solidQuestionCircle,
+                      color: Colors.white)),
             ),
-
-            Scaffold(
-              backgroundColor: Colors.transparent,
-              appBar: AppBar(
-                centerTitle: true,
-                leading: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 20,
-                    left: 20
-                  ),
-                  child: GestureDetector(
-                    onTap: () { Navigator.push( context, MaterialPageRoute(builder: (context) => HelpPage() ) ); },
-                    child: FaIcon( FontAwesomeIcons.solidQuestionCircle, color: Colors.white )
-                    ),
-                ),
-                title: Text( "TopSix", 
-                  style: TextStyle( 
-                    color: Colors.white, 
-                    fontFamily: "Chivo", 
+            title: Text("TopSix",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: "Chivo",
                     fontStyle: FontStyle.italic,
-                    fontSize: 30
-                  ) 
-                ),
-                elevation: 0,
-                backgroundColor: Colors.transparent,
-              ),
-              body: HomePageSelector()
-            ),
-          ]
-    );
+                    fontSize: 30)),
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+          ),
+          body: HomePageSelector()),
+    ]);
   }
-
 }
-
-

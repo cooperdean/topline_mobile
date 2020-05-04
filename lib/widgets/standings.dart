@@ -102,7 +102,7 @@ class _LeagueStandingsState extends State<LeagueStandings> {
                                     ),
                                     Expanded(
                                       flex: 1,
-                                      child: Text("-"),
+                                      child: Text(" "),
                                     ),
                                     Expanded(
                                       flex: 1,
@@ -200,7 +200,7 @@ class _LeagueStandingsState extends State<LeagueStandings> {
                                     ),
                                     Expanded(
                                       flex: 1,
-                                      child: Text("-"),
+                                      child: Text(" "),
                                     ),
                                     Expanded(
                                       flex: 1,

@@ -10,10 +10,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      theme: ThemeData(
-        primaryColor: Colors.grey[900],
-        accentColor: Colors.white
-      ),
+      theme:
+          ThemeData(primaryColor: Colors.grey[900], accentColor: Colors.white),
       title: "TopSix",
       home: Home(),
     );
