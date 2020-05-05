@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:http/http.dart' as http;
 import 'package:topline/paturls.dart';
-import 'dart:convert';
 import 'classes/team_rosters.dart';
 import 'functions.dart';
 import 'team_roster.dart';
@@ -15,60 +12,55 @@ class LinesTab extends StatefulWidget {
 }
 
 class _LinesState extends State<LinesTab> {
-  Future<List<TeamLine>> _getTeamLines() async {
-    var data = await http.get(linesUrl);
-    var jsonData = json.decode(utf8.decode(data.bodyBytes));
-    List<TeamLine> teamlines = [];
-    for (var l in jsonData) {
-      TeamLine teamline = TeamLine(
-          l["team"],
-          l["ir"],
-          l["timestamp"],
-          l["l1lw"],
-          l["l1c"],
-          l["l1rw"],
-          l["l2lw"],
-          l["l2c"],
-          l["l2rw"],
-          l["l3lw"],
-          l["l3c"],
-          l["l3rw"],
-          l["l4lw"],
-          l["l4c"],
-          l["l4rw"],
-          l["d1r"],
-          l["d1l"],
-          l["d2r"],
-          l["d2l"],
-          l["d3r"],
-          l["d3l"],
-          l["pp1lw"],
-          l["pp1c"],
-          l["pp1rw"],
-          l["pp1ld"],
-          l["pp1rd"],
-          l["pp2lw"],
-          l["pp2c"],
-          l["pp2rw"],
-          l["pp2ld"],
-          l["pp2rd"],
-          l["g1"],
-          l["g2"],
-          l["record"]);
-      teamlines.add(teamline);
-    }
-    return teamlines;
+  TeamLine _getTeamLines(dynamic teamlist) {
+    return TeamLine(
+        teamlist["team"],
+        teamlist["ir"],
+        teamlist["timestamp"],
+        teamlist["l1lw"],
+        teamlist["l1c"],
+        teamlist["l1rw"],
+        teamlist["l2lw"],
+        teamlist["l2c"],
+        teamlist["l2rw"],
+        teamlist["l3lw"],
+        teamlist["l3c"],
+        teamlist["l3rw"],
+        teamlist["l4lw"],
+        teamlist["l4c"],
+        teamlist["l4rw"],
+        teamlist["d1r"],
+        teamlist["d1l"],
+        teamlist["d2r"],
+        teamlist["d2l"],
+        teamlist["d3r"],
+        teamlist["d3l"],
+        teamlist["pp1lw"],
+        teamlist["pp1c"],
+        teamlist["pp1rw"],
+        teamlist["pp1ld"],
+        teamlist["pp1rd"],
+        teamlist["pp2lw"],
+        teamlist["pp2c"],
+        teamlist["pp2rw"],
+        teamlist["pp2ld"],
+        teamlist["pp2rd"],
+        teamlist["g1"],
+        teamlist["g2"]);
   }
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: FutureBuilder(
-        future: _getTeamLines(),
+      child: StreamBuilder(
+        stream: FirebaseDatabase.instance.reference().child('Teams').onValue,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.data == null) {
             return Container(child: Center(child: CircularProgressIndicator()));
           } else {
+            Map data = snapshot.data.snapshot.value;
+            List teams = [];
+            data.forEach((index, data) => teams.add({"team": index, ...data}));
             return ClipRRect(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(60), topRight: Radius.circular(60)),
@@ -80,7 +72,7 @@ class _LinesState extends State<LinesTab> {
                     color: Colors.white),
                 child: ListView.builder(
                   padding: EdgeInsets.only(top: 10),
-                  itemCount: snapshot.data.length,
+                  itemCount: teams.length,
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       child: Padding(
@@ -97,11 +89,10 @@ class _LinesState extends State<LinesTab> {
                                     "https://sportteamslogo.com/api?key=" +
                                         logoKey +
                                         "&size=medium&tid=" +
-                                        getTeamLogo(
-                                            snapshot.data[index].team))),
-                            title: Text(snapshot.data[index].team,
+                                        getTeamLogo(teams[index]['team']))),
+                            title: Text(teams[index]['team'],
                                 style: TextStyle(fontSize: 16)),
-                            subtitle: Text(snapshot.data[index].record),
+                            subtitle: Text(teams[index]['timestamp']),
                           ),
                         ),
                       ),
@@ -110,7 +101,7 @@ class _LinesState extends State<LinesTab> {
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                TeamRoster(team: snapshot.data[index]),
+                                TeamRoster(team: _getTeamLines(teams[index])),
                           ),
                         );
                       },

@@ -1,5 +1,4 @@
 class TeamLine {
-
   final String team;
   final List ir;
   final String timestamp;
@@ -24,8 +23,8 @@ class TeamLine {
   final List pp1lw;
   final List pp1c;
   final List pp1rw;
-  final List pp1ld; 
-  final List pp1rd; 
+  final List pp1ld;
+  final List pp1rd;
   final List pp2lw;
   final List pp2c;
   final List pp2rw;
@@ -33,10 +32,8 @@ class TeamLine {
   final List pp2rd;
   final List g1;
   final List g2;
-  final String record;
-  
-  TeamLine( 
 
+  TeamLine(
     this.team,
     this.ir,
     this.timestamp,
@@ -70,14 +67,10 @@ class TeamLine {
     this.pp2rd,
     this.g1,
     this.g2,
-    this.record
-
-   );
-
+  );
 }
 
 class TeamSchedule {
-
   final String gameNumber;
   final String date;
   final String homeAway;
@@ -87,15 +80,6 @@ class TeamSchedule {
   final String result;
   final String overtime;
 
-  TeamSchedule(
-    this.gameNumber,
-    this.date,
-    this.homeAway,
-    this.opponent,
-    this.goalsFor,
-    this.goalsAgainst,
-    this.result,
-    this.overtime
-  );
-
+  TeamSchedule(this.gameNumber, this.date, this.homeAway, this.opponent,
+      this.goalsFor, this.goalsAgainst, this.result, this.overtime);
 }
